@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@coral-xyz/xnft-cli": "^0.2.0-latest.2732",
+    "react-xnft": "^0.2.0-latest.2732"
+  }
+}
