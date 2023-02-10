@@ -3,28 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Link as ScrollLink} from 'react-scroll';
 
-const Home: NextPage = () => {
+// flex min-h-screen flex-col items-center justify-center py-2 font-mont bg-white
+// flex h-24 w-full items-center justify-between
+// flex px-60 gap-2
+// object-contain
 
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 font-mont bg-white">
-      
-      <Head>
-        <title> eduScan | Home </title>
-        <link rel="icon" href="/eduScan.png" />
-      </Head>
-    
-
-      <nav className="flex h-24 w-full items-center justify-between">
-        <a
-          className="flex px-60 gap-2"
-          href="/"
-        >
-          <Image className="object-contain" src="/eduScan-no-bg.svg" alt="eduScan Logo" width={200} height={200}/>
-        </a>
-
-        <div className="flex px-60 gap-2">
-
-        <ScrollLink
+{/* <ScrollLink
                 href="/"
                 to="events" smooth={true} duration={500}                
                 className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
@@ -32,19 +16,76 @@ const Home: NextPage = () => {
                 
                   Events
                 
-              </ScrollLink>
-          
-          <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-            border-b-2 border-transparent hover:border-purple-700 px-3"> Jobs </button>
-          <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-            border-b-2 border-transparent hover:border-purple-700 px-3"> Profile </button>
-          <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-            border-b-2 border-transparent hover:border-purple-700 px-3"> Settings </button>
+        </ScrollLink> */}
+
+const Home: NextPage = () => {
+
+  return (
+
+
+    
+    <div className="font-mont bg-[#f0f0fb]">  {/*
+                                              div only for font
+                                          */}
+
+      <Head>  
+        <title> eduScan | Home </title>
+        <link rel="icon" href="/eduScan.png" />
+      </Head>
+
+      <nav className="relative container mx-auto p-6 ">
+        <div className="flex items-center justify-between">
+
+        <a href="/">
+          <Image className="pt-1" src="/eduScan-no-bg.svg" alt="eduScan Logo" width={220} height={250}/>
+        </a>
+        {/*
+            header 
+        */}
+        <div className="hidden space-x-6 md:flex">
+        {/*
+            needs to be refactored to use next/link 
+        */}
+          <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Jobs </a> 
+          <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Profile </a>
+          <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Settings </a>
         </div>
-
+        {/*
+            button 
+        */}
+        <a href="" className="hidden p-2 px-5 pt-3 text-white hover:font-bold bg-purple-700 rounded-[16px] baseline bg-gradient-to-r from-purple-700 to-teal-400 md:block"
+        >
+          Get Started
+        </a>
+      </div>
+        
     </nav>
+      {/*
+          Hero Section
+      */}
+    <main className="container flex flex-col-reverse items-center px-24 mx-auto mt-40 space-y-0 md:space-y-0 md:flex-row">
+      <div className="flex flex-col mb-80 space-y-12 md:w-1/2">
 
-      <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
+        <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400 md:text-5xl">
+        Stay Connected with the Crypto Community on Campus and Beyond
+        </h1>
+
+        <a>
+          <Image className="md:w-1/4 " src="/placeholder.png" alt="eduScan Logo" width={220} height={250}/>
+        </a>
+      
+    
+
+      </div>
+
+    <footer>
+
+      
+    </footer>
+
+    </main>
+
+      {/* <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
         
         <div className="flex w-full flex-row items-center justify-center">
         
@@ -144,52 +185,49 @@ const Home: NextPage = () => {
 
       <footer className="flex h-24 w-full items-center justify-between">
 
-        <div className="flex flex-col px-60">
+        <div className="flex flex-col px-40">
         <a
           className="flex gap-2"
           href="/"
         >
-          <Image className="object-contain" src="/eduScan_black.png" alt="eduScan Logo" width={200} height={200}/>
+          <Image className="object-contain  " src="/eduScan-no-bg.svg" alt="eduScan Logo" width={150} height={100}/>
         </a>
 
-        <h2 className="text-black font-bold mt-3 text-1xl">
-        Built by Chads
-        </h2>
 
         </div>
 
         <div className="flex flex-row px-60">
 
         <a
-          className="flex items-center justify-center gap-2 px-5"
+          className="flex items-center justify-center gap-2 px-1"
           href="https://twitter.com/eduscan_xyz"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className="hover:scale-125" src="/twitter.png" alt="Twitter Logo" width={40} height={40} />
+          <Image className="hover:scale-125" src="/twitter.png" alt="Twitter Logo" width={30} height={30} />
         </a>
 
         <a
-          className="flex items-center justify-center gap-2 px-5"
+          className="flex items-center justify-center gap-2 px-1"
           href="https://discord.gg/U4gbtPU5"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={40} height={40} />
+          <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={30} height={30} />
         </a>
 
         <a
-          className="flex items-center justify-center gap-2 px-5"
+          className="flex items-center justify-center gap-2 px-1"
           href="https://medium.com/@eduScan.xyz"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={40} height={40} />
+          <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={30} height={30} />
         </a>
 
         </div>
 
-      </footer>
+      </footer> */}
     </div>
   )
 }
