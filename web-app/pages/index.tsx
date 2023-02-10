@@ -1,45 +1,54 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-
-
+import { Link as ScrollLink} from 'react-scroll';
 
 const Home: NextPage = () => {
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 font-mont">
+    <div className="flex min-h-screen flex-col items-center justify-center py-2 font-mont bg-white">
+      
       <Head>
         <title> eduScan | Home </title>
         <link rel="icon" href="/eduScan.png" />
       </Head>
     
 
-      <nav className="flex h-24 w-full items-center border-b justify-between">
+      <nav className="flex h-24 w-full items-center justify-between">
         <a
           className="flex px-60 gap-2"
-          href="https://twitter.com/eduscan_xyz"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/"
         >
-          <Image className="object-contain " src="/eduScan-no-bg.svg" alt="Vercel Logo" width={250} height={250} />
+          <Image className="object-contain" src="/eduScan-no-bg.svg" alt="eduScan Logo" width={200} height={200}/>
         </a>
 
         <div className="flex px-60 gap-2">
+
+        <ScrollLink
+                href="/"
+                to="events" smooth={true} duration={500}                
+                className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
+                border-b-2 border-transparent hover:border-purple-700 px-3">
+                
+                  Events
+                
+              </ScrollLink>
           
-          <button className="text-xl hover:text-purple-700 transition-in duration-500 ease-out 
-            border-b-2 border-transparent hover:border-purple-700 px-3"> Messages </button>
-          <button className="text-xl hover:text-purple-700 transition-in duration-500 ease-out 
+          <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
+            border-b-2 border-transparent hover:border-purple-700 px-3"> Jobs </button>
+          <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
             border-b-2 border-transparent hover:border-purple-700 px-3"> Profile </button>
-          <button className="text-xl hover:text-purple-700 transition-in duration-500 ease-out 
+          <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
             border-b-2 border-transparent hover:border-purple-700 px-3"> Settings </button>
         </div>
 
     </nav>
 
-      <main className="flex w-full flex-1 items-center justify-center px-20 text-center my-60">
+      <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
         
         <div className="flex w-full flex-row items-center justify-center">
         
-        <h1 className="flex flex-col text-5xl text-purple-700 font-bold">
+        <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400">
         Stay Connected with the Crypto Community on Campus and Beyond
         
         <h2 className="text-black mt-3 text-2xl">
@@ -49,61 +58,108 @@ const Home: NextPage = () => {
         </h1>
         
         </div>
-        
+
       </main>
 
-      <div id="events" className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center my-60">
-      
-      <div>
-      <h2 className="text-purple-700 mt-3 text-4xl">
+      <div id="events" className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center my-40">
+
+      <h2 className="text-purple-700 font-bold text-4xl mb-20">
         Events
         </h2>
-      </div>
+
       
-      <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+      <div className="flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
+
+      <a
+            href="https://www.outeredge.live/"
+            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3 className="text-2xl font-bold">Event 1</h3>
+            <div>
+            <h3 className="text-2xl font-bold">NFT LA</h3>
             <p className="mt-4 text-xl">
-              What is Blockchain?
+            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
+            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
             </p>
+            </div>
+
+            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
           </a>
 
           <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            href="https://www.outeredge.live/"
+            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3 className="text-2xl font-bold">Event 2</h3>
+            <div>
+            <h3 className="text-2xl font-bold">NFT LA</h3>
             <p className="mt-4 text-xl">
-              Tools and Technologies in Web3 Development
+            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
+            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
             </p>
+            </div>
+
+            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
           </a>
 
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            href="https://www.outeredge.live/"
+            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3 className="text-2xl font-bold">Event 3 </h3>
+            <div>
+            <h3 className="text-2xl font-bold">NFT LA</h3>
             <p className="mt-4 text-xl">
-              Are NFT's worth getting into? Find out tomorrow at 3:30 pm
+            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
+            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
             </p>
+            </div>
+
+            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
           </a>
 
           <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            href="https://www.outeredge.live/"
+            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3 className="text-2xl font-bold">Event 4</h3>
+            <div>
+            <h3 className="text-2xl font-bold">NFT LA</h3>
             <p className="mt-4 text-xl">
-              Interested in a Solana Hackathon? Come to the interest session on Friday! 
+            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
+            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
             </p>
+            </div>
+
+            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
           </a>
-        </div>
+
       </div>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
+      </div>
+
+      <footer className="flex h-24 w-full items-center justify-between">
+
+        <div className="flex flex-col px-60">
+        <a
+          className="flex gap-2"
+          href="/"
+        >
+          <Image className="object-contain" src="/eduScan_black.png" alt="eduScan Logo" width={200} height={200}/>
+        </a>
+
+        <h2 className="text-black font-bold mt-3 text-1xl">
+        Built by Chads
+        </h2>
+
+        </div>
+
+        <div className="flex flex-row px-60">
+
         <a
           className="flex items-center justify-center gap-2 px-5"
           href="https://twitter.com/eduscan_xyz"
@@ -130,6 +186,8 @@ const Home: NextPage = () => {
         >
           <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={40} height={40} />
         </a>
+
+        </div>
 
       </footer>
     </div>
