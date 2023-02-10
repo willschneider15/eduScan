@@ -1,15 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Link as ScrollLink} from 'react-scroll'
+
+
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center py-2 font-mont">
       <Head>
-        <title> eduScan </title>
-        <link rel="icon" href="/black_no_bg.png" />
+        <title> eduScan | Home </title>
+        <link rel="icon" href="/eduScan.png" />
       </Head>
+    
 
       <nav className="flex h-24 w-full items-center border-b justify-between">
         <a
@@ -18,21 +20,11 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className="hover:scale-125" src="/eduscan_no_bg.png" alt="Vercel Logo" width={250} height={250} />
+          <Image className="object-contain " src="/eduScan-no-bg.svg" alt="Vercel Logo" width={250} height={250} />
         </a>
 
         <div className="flex px-60 gap-2">
-          <ScrollLink 
-            href="/"
-            to="events" smooth={true} 
-            duration={500}
-            className="text-xl hover:text-purple-600 transition-in duration-500 ease-out 
-            border-b-2 border-transparent hover:border-purple-600 px-3">  
-
-            Events 
-
-          </ScrollLink>
-
+          
           <button className="text-xl hover:text-purple-700 transition-in duration-500 ease-out 
             border-b-2 border-transparent hover:border-purple-700 px-3"> Messages </button>
           <button className="text-xl hover:text-purple-700 transition-in duration-500 ease-out 
@@ -127,7 +119,16 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image className="hover:scale-125" src="/discord.png" alt="Disccord Logo" width={40} height={40} />
+          <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={40} height={40} />
+        </a>
+
+        <a
+          className="flex items-center justify-center gap-2 px-5"
+          href="https://medium.com/@eduScan.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={40} height={40} />
         </a>
 
       </footer>

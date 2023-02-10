@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   
@@ -7,7 +9,11 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+         mont: ["MONT", 'cursive'],
+      }
+    },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }
