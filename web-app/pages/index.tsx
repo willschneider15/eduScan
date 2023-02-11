@@ -47,7 +47,7 @@ const Home: NextPage = () => {
             needs to be refactored to use next/link 
         */}
           <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Jobs </a> 
-          <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Profile </a>
+          <a href="/resources"className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Resources </a>
           <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Settings </a>
         </div>
         {/*
@@ -78,31 +78,9 @@ const Home: NextPage = () => {
 
       </div>
 
-    <footer>
-
-      
-    </footer>
-
     </main>
 
-      {/* <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
-        
-        <div className="flex w-full flex-row items-center justify-center">
-        
-        <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400">
-        Stay Connected with the Crypto Community on Campus and Beyond
-        
-        <h2 className="text-black mt-3 text-2xl">
-        powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
-        </h2>
-
-        </h1>
-        
-        </div>
-
-      </main>
-
-      <div id="events" className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center my-40">
+    <div id="events" className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center my-20">
 
       <h2 className="text-purple-700 font-bold text-4xl mb-20">
         Events
@@ -183,51 +161,69 @@ const Home: NextPage = () => {
 
       </div>
 
-      <footer className="flex h-24 w-full items-center justify-between">
+    <footer className="flex h-24 w-full items-center justify-between">
 
-        <div className="flex flex-col px-40">
-        <a
+      <div className="flex flex-col px-80">
+          <a
           className="flex gap-2"
           href="/"
-        >
-          <Image className="object-contain  " src="/eduScan-no-bg.svg" alt="eduScan Logo" width={150} height={100}/>
-        </a>
+          >
+          <Image className="object-contain  " src="/eduscan_black.png" alt="eduScan Logo" width={150} height={100}/>
+          </a>
 
 
-        </div>
+      </div>
 
-        <div className="flex flex-row px-60">
+      <div className="flex flex-row px-80 space-x-6">
 
-        <a
+          <a
           className="flex items-center justify-center gap-2 px-1"
           href="https://twitter.com/eduscan_xyz"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <Image className="hover:scale-125" src="/twitter.png" alt="Twitter Logo" width={30} height={30} />
-        </a>
+          >
+          <Image className="hover:scale-125" src="/twitter.png" alt="Twitter Logo" width={40} height={40} />
+          </a>
 
-        <a
+          <a
           className="flex items-center justify-center gap-2 px-1"
           href="https://discord.gg/U4gbtPU5"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={30} height={30} />
-        </a>
+          >
+          <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={40} height={40} />
+          </a>
 
-        <a
+          <a
           className="flex items-center justify-center gap-2 px-1"
           href="https://medium.com/@eduScan.xyz"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={30} height={30} />
-        </a>
+          >
+          <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={40} height={40} />
+          </a>
 
+      </div>
+
+  </footer>
+
+      {/* <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
+        
+        <div className="flex w-full flex-row items-center justify-center">
+        
+        <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400">
+        Stay Connected with the Crypto Community on Campus and Beyond
+        
+        <h2 className="text-black mt-3 text-2xl">
+        powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
+        </h2>
+
+        </h1>
+        
         </div>
 
-      </footer> */}
+    </main>*/}
+
     </div>
   )
 }
