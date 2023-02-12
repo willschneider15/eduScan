@@ -2,194 +2,212 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Link as ScrollLink} from 'react-scroll';
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 const Home: NextPage = () => {
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 font-mont bg-white">
-      
-      <Head>
-        <title> eduScan | Home </title>
-        <link rel="icon" href="/eduScan.png" />
-      </Head>
-    
+    <>
 
-      <nav className="flex h-24 w-full items-center justify-between">
-        <a
-          className="flex px-60 gap-2"
-          href="/"
-        >
-          <Image className="object-contain" src="/eduScan-no-bg.svg" alt="eduScan Logo" width={200} height={200}/>
-        </a>
-
-        <div className="flex px-60 gap-2">
-
-          <ScrollLink
-                  href="/"
-                  to="events" smooth={true} duration={500}                
-                  className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-                  border-b-2 border-transparent hover:border-purple-700 px-3">
+      <div className='bg-zinc-50 px-10'>
+            <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
                   
-                    Events
-                  
-            </ScrollLink>
+              <Head>
+                <title> eduScan | Home </title>
+                <link rel="icon" href="/eduScan.png" />
+              </Head>
             
-            <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-              border-b-2 border-transparent hover:border-purple-700 px-3"> Jobs </button>
-            <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-              border-b-2 border-transparent hover:border-purple-700 px-3"> Profile </button>
-            <button className="text-xl text-black hover:text-purple-700 transition-in duration-1000 ease-out 
-              border-b-2 border-transparent hover:border-purple-700 px-3"> Settings </button>
-        </div>
+              <Header/>
+             
 
-    </nav>
+              <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
+                <div className="flex w-full flex-row items-center justify-center">
+                  <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400 pb-3">
+                    Connecting Universities to the Blockchain
+                  </h1>
+                </div>
+                <h2 className="text-black pt-3 font-medium">
+                  powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
+                </h2>
+              </main>
 
-      <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
-        
-        <div className="flex w-full flex-row items-center justify-center">
-        
-        <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400">
-        Stay Connected with the Crypto Community on Campus and Beyond
-        </h1>
-       
+              <div id="events" className="flex flex-col gap-3">
 
-        
-        </div>
-        <h2 className="text-black mt-3 text-2xl">
-        powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
-        </h2>
-      </main>
+                <h2 className="text-purple-700 font-bold text-xl">
+                  Upcoming Events
+                </h2>
 
-      <div id="events" className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center my-40">
+                
+                <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
 
-      <h2 className="text-purple-700 font-bold text-4xl mb-20">
-        Events
-        </h2>
+                  {/* we should break this up by dynamically creating each component from a markdown file that automatically leave our site when time is up */}
+                  
 
-      
-      <div className="flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
+                {/* Grizzlython */}
+                <div
+                   
+                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                   border p-6  shadow-xl"
+                  
+                   >
+                   <div className='flex flex-col'>
+                     <h3 className="text-xl font-bold text-zinc-900">Grizzlython - Feb 2 to Mar 4</h3>
+                     <p className="mt-4 font-medium text-zinc-500">
+                     Hackathon hosted by Solana with $5 Million in global prizes with multiple tracks.
+                     </p>
+                     <a  
+                      href="https://solana.com/grizzlython"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                         Read More
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                       </span>
+                     </a>
+                   </div>
+                   <div className='img_card_div'>
+                     <Image className="img_card rounded-lg" src="/events/grizzlython.jpeg" alt="NYU" width={200} height={200}/>
+                   </div>
+                 </div>
 
-      <a
-            href="https://www.outeredge.live/"
-            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div>
-            <h3 className="text-2xl font-bold">NFT LA</h3>
-            <p className="mt-4 text-xl">
-            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
-            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
-            </p>
+
+                 {/* Near Hackathon */}
+                <div
+                   
+                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                   border p-6  shadow-xl"
+                  
+                   >
+                   <div className='flex flex-col'>
+                     <h3 className="text-xl font-bold text-zinc-900">Near Hack - Feb 8 to Feb 17</h3>
+                     <p className="mt-4 font-medium text-zinc-500">
+                     Hackathon hosted by Near with $5000 and 5000 Near token in prizes with multiple tracks.
+                     </p>
+                     <a  
+                      href="https://twitter.com/NearSocial_/status/1622690510631538703"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                         Read More
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                       </span>
+                     </a>
+                   </div>
+                   <div className='img_card_div'>
+                     <Image className="img_card rounded-lg" src="/events/nearHack.jpeg" alt="NYU" width={200} height={200}/>
+                   </div>      
+                 </div>
+
+
+
+                  {/* NYU Blockchain */}
+                  <div
+                   
+                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                   border p-6  shadow-xl"
+                  
+                   >
+                   <div className='flex flex-col'>
+                     <h3 className="text-xl font-bold text-zinc-900">NYU Blockchain - Feb 15th</h3>
+                     <p className="mt-4 font-medium text-zinc-500">
+                     Hosting a DeFi Workshop with Quickswap, Gamma, Gammaswap, Curve Finance, and Gains Network.
+                     </p>
+                     <a  
+                      href="https://forms.gle/3fRpTJB9reMJThBR7"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                         Read More
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                       </span>
+                     </a>
+                   </div>
+                   <div className='img_card_div'>
+                     <Image className="img_card rounded-lg" src="/events/nyuBlock.webp" alt="NYU" width={200} height={200}/>
+                   </div>
+                     
+                 </div>
+
+
+
+                  
+                    {/* Consensus card */}
+                    <div
+                   
+                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                   border p-6  shadow-xl"
+                  
+                 >
+                   <div className='flex flex-col'>
+                     <h3 className="text-xl font-bold text-zinc-900">Consensus - April 26-28</h3>
+                     <p className="mt-4 font-medium text-zinc-500">
+                      Join the Most Important Conversation in Crypto and Web3. Hosted in Austin, Texas.
+                     </p>
+                     <a  
+                      href="https://consensus.coindesk.com/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                         Read More
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                       </span>
+                     </a>
+                   </div>
+                   <div className='img_card_div'>
+                     <Image className="img_card rounded-lg" src="/events/consensus.png" alt="consensus" width={200} height={200}/>
+                   </div>
+                     
+                 </div>
+                  
+                  {/* NFT LA */}
+                  <div
+                   
+                    className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                    border p-6  shadow-xl"
+                   
+                  >
+                    <div className='flex flex-col'>
+                      <h3 className="text-xl font-bold text-zinc-900">NFT LA - March 20-23</h3>
+                      <p className="mt-4 font-medium text-zinc-500">
+                      Connect, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
+                      investors, brands, enthusiasts.
+                      </p>
+                      <a  
+                       href="https://www.outeredge.live/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                      </a>
+                    </div>
+                    <div className='img_card_div'>
+                      <Image className="img_card rounded-lg" src="/events/nftLA.png" alt="NFT-LA" width={200} height={200}/>
+                    </div>
+                      
+                  </div>
+
+
+
+                  
+
+
+                 
+
+
+                 
+                </div>
+              </div>
+              
+              <Footer/>
             </div>
-
-            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
-          </a>
-
-          <a
-            href="https://www.outeredge.live/"
-            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div>
-            <h3 className="text-2xl font-bold">NFT LA</h3>
-            <p className="mt-4 text-xl">
-            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
-            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
-            </p>
-            </div>
-
-            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
-          </a>
-
-          <a
-            href="https://www.outeredge.live/"
-            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div>
-            <h3 className="text-2xl font-bold">NFT LA</h3>
-            <p className="mt-4 text-xl">
-            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
-            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
-            </p>
-            </div>
-
-            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
-          </a>
-
-          <a
-            href="https://www.outeredge.live/"
-            className="flex flex-row mt-0 w-30 rounded-xl border p-6 my-20 text-center hover:text-purple-700 focus:text-blue-600 shadow-xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div>
-            <h3 className="text-2xl font-bold">NFT LA</h3>
-            <p className="mt-4 text-xl">
-            For four days on March 20-23, 2023 get connected, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
-            investors, brands, enthusiasts, and experts at NFT LA — an event like no other.
-            </p>
-            </div>
-
-            <Image className="object-contain flex flex-row" src="/nftLA.png" alt="eduScan Logo" width={200} height={200}/>
-          </a>
-
-      </div>
-
-      </div>
-
-      <footer className="flex h-24 w-full items-center justify-between">
-
-        <div className="flex flex-col px-60">
-        <a
-          className="flex gap-2"
-          href="/"
-        >
-          <Image className="object-contain" src="/eduScan_black.png" alt="eduScan Logo" width={200} height={200}/>
-        </a>
-
-        <h2 className="text-black font-bold mt-3 text-1xl">
-        Built by Chads
-        </h2>
-
-        </div>
-
-        <div className="flex flex-row px-60">
-
-        <a
-          className="flex items-center justify-center gap-2 px-5"
-          href="https://twitter.com/eduscan_xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image className="hover:scale-125" src="/twitter.png" alt="Twitter Logo" width={40} height={40} />
-        </a>
-
-        <a
-          className="flex items-center justify-center gap-2 px-5"
-          href="https://discord.gg/U4gbtPU5"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={40} height={40} />
-        </a>
-
-        <a
-          className="flex items-center justify-center gap-2 px-5"
-          href="https://medium.com/@eduScan.xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={40} height={40} />
-        </a>
-
-        </div>
-
-      </footer>
-    </div>
+            
+          </div>
+    </>
+    
+    
   )
 }
 
