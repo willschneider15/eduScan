@@ -24,7 +24,7 @@ const Home: NextPage = () => {
               <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
                 <div className="flex w-full flex-row items-center justify-center">
                   <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400 pb-3">
-                    Connecting Universities to the Blockchain
+                    Connecting Universities to Web3
                   </h1>
                 </div>
                 <h2 className="text-black pt-3 font-medium">
@@ -46,13 +46,13 @@ const Home: NextPage = () => {
 
                 {/* Grizzlython */}
                 <div
-                   
-                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-                   border p-6  shadow-xl"
+                   className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                   border p-6 shadow-xl relative"
                   
                    >
                    <div className='flex flex-col'>
-                     <h3 className="text-xl font-bold text-zinc-900">Grizzlython - Feb 2 to Mar 4</h3>
+                    
+                     <h3 className="text-xl font-bold text-zinc-900">Grizzlython - Feb 2 to Mar 14</h3>
                      <p className="mt-4 font-medium text-zinc-500">
                      Hackathon hosted by Solana with $5 Million in global prizes with multiple tracks.
                      </p>
@@ -65,18 +65,31 @@ const Home: NextPage = () => {
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                        </span>
                      </a>
+                                      
                    </div>
+                   
                    <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/grizzlython.jpeg" alt="NYU" width={200} height={200}/>
+                     <Image className="img_card rounded-lg" src="/events/grizzlython.jpeg" alt="grizzly" width={200} height={200}/>
+                     
                    </div>
+
+                   <span className="absolute top-0 right-0 mt-2 mr-2">
+                   <span className="text-center text-red-500 font-medium">LIVE </span>
+                       <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 mr-2">
+                        <span className="absolute animate-ping h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                       </span>
+
+                     </span> 
+
                  </div>
 
 
                  {/* Near Hackathon */}
+                 
                 <div
                    
                    className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-                   border p-6  shadow-xl"
+                   border p-6 shadow-xl relative"
                   
                    >
                    <div className='flex flex-col'>
@@ -95,8 +108,17 @@ const Home: NextPage = () => {
                      </a>
                    </div>
                    <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/nearHack.jpeg" alt="NYU" width={200} height={200}/>
-                   </div>      
+                     <Image className="img_card rounded-lg" src="/events/nearHack.jpeg" alt="near" width={200} height={200}/>
+                   </div> 
+                   
+                   <span className="absolute top-0 right-0 mt-2 mr-2">
+                   <span className="text-center text-red-500 font-medium">LIVE </span>
+                       <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 mr-2">
+                        <span className="absolute animate-ping h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                       </span>
+
+                     </span> 
+                       
                  </div>
 
 
@@ -189,15 +211,6 @@ const Home: NextPage = () => {
                       
                   </div>
 
-
-
-                  
-
-
-                 
-
-
-                 
                 </div>
               </div>
               

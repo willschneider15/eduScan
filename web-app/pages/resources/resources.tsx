@@ -169,10 +169,20 @@ const Resources: NextPage = () => {
         <li className="my-4 text-xl">
             <a
             className="hover:text-purple-700"
-            href="https://careerbooster.io/courses/full-solana-and-rust-programming-course-for-beginners"
+            href="https://soldev.app/course"
             target="_blank"
             rel="noopener noreferrer"> 
-            Free Solana and Rust programming course for beginners </a>
+            Solana Development Course </a>
+
+        </li>
+
+        <li className="my-4 text-xl">
+            <a
+            className="hover:text-purple-700"
+            href="https://beta.solpg.io/"
+            target="_blank"
+            rel="noopener noreferrer"> 
+            Solana Playground </a>
 
         </li>    
 
@@ -204,8 +214,8 @@ const Resources: NextPage = () => {
             rel="noopener noreferrer"> 
             Build your own decentralized social media protocol on Solana </a>
 
-        </li>  
-                
+        </li>
+
         </ul>
 
         </div>

@@ -7,10 +7,13 @@ function footer() {
    
     return(
         <footer className="footer items-end pb-8 pt-10">
-            <div className="flex justify-between px-4 sm:px-4 lg:px-8">
+            <div className="flex flex-col justify-between px-4 sm:px-4 lg:px-8">
                 
                 <p>Built by Solteria</p>
+                <p>v1.0.0</p>
+                
                 </div> 
+
                 <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end sm:px-4">
                 <a href='https://twitter.com/eduscan_xyz'
                 target="_blank"
