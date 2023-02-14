@@ -21,7 +21,7 @@ const Home: NextPage = () => {
               <Header/>
              
 
-              <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-60">
+              <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-40 md:my-60">
                 <div className="flex w-full flex-row items-center justify-center">
                   <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400 pb-3">
                     Connecting Universities to Web3
