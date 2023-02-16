@@ -10,7 +10,7 @@ function header() {
         setActive(!active);
     };
     return(
-        <nav className="flex items-center flex-wrap pb-10 pt-2  max-w-7xl px-2 sm:px-4 lg:px-8">
+        <nav className="flex items-center flex-wrap pb-10 pt-2  max-w-7xl px-2 sm:px-0 lg:px-8">
             <div className='relative flex h-16 items-center justify-between'>
                 <Link
                     className="flex items-center gap-4 lg:px-0"
