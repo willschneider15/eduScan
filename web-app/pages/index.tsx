@@ -4,7 +4,13 @@ import Image from 'next/image'
 import { Link as ScrollLink} from 'react-scroll';
 import Header from '../components/header'
 import Footer from '../components/footer'
+import { GetStaticProps } from 'next';
+import { getAllPosts } from '../lib/api';
+import { PostType } from '../types/post';
 
+type IndexProps = {
+  posts: PostType[];
+};
 const Home: NextPage = () => {
 
   return (
@@ -123,34 +129,7 @@ const Home: NextPage = () => {
 
 
 
-                  {/* NYU Blockchain */}
-                  <div
-                   
-                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-                   border p-6  shadow-xl"
-                  
-                   >
-                   <div className='flex flex-col'>
-                     <h3 className="text-xl font-bold text-zinc-900">NYU Blockchain - Feb 15th</h3>
-                     <p className="mt-4 font-medium text-zinc-500">
-                     Hosting a DeFi Workshop with Quickswap, Gamma, Gammaswap, Curve Finance, and Gains Network.
-                     </p>
-                     <a  
-                      href="https://forms.gle/3fRpTJB9reMJThBR7"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                         Read More
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </span>
-                     </a>
-                   </div>
-                   <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/nyuBlock.webp" alt="NYU" width={200} height={200}/>
-                   </div>
-                     
-                 </div>
-
+                
 
 
                   
@@ -223,5 +202,13 @@ const Home: NextPage = () => {
     
   )
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = getAllPosts(['date', 'description', 'slug', 'title']);
+
+  return {
+    props: { posts },
+  };
+};
 
 export default Home
