@@ -8,6 +8,33 @@
 }
 
 
+.img_card_div{
+    box-sizing:border-box;
+    display:inline-block;
+    overflow:hidden;
+    width:initial;
+    height:initial;
+    background:none;
+    opacity:1;
+    border:0;
+    margin:0;
+    padding:0;
+    position:relative;
+    max-width:100%
+}
+
+.img_card{
+    display:block;
+    max-width:100%;
+    width:initial;
+    height:initial;
+    background:none;
+    opacity:1;
+    border:0;
+    margin:0;
+    padding:0
+}
+
 .image-container {
     width: 100%;
 }
