@@ -3,14 +3,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@next/font": "^13.1.6",
+    "@portabletext/react": "^2.0.1",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^5.2.1",
+    "@sanity/image-url": "^1.0.2",
     "daisyui": "^2.50.0",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
+    "groq": "^3.4.0",
     "next": "^13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.8.1",
     "react-scroll": "^1.8.9"
   },
   "devDependencies": {
