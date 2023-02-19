@@ -31,11 +31,11 @@ const Ottersec: NextPage = () => {
                 <h2 className='text-purple-700 text-l md:text-3xl'>
                     Hosted By: Ohio State
                 </h2>
-              <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-10 ">
+              <main className="flex flex-col w-full flex-1 items-center justify-center md:px-20 text-center my-10 ">
                 
                 <div className="flex w-full flex-row items-center justify-center">
-                    <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/ottersec.png" alt="ottersec" width={400} height={400}/>
+                    <div className='image_container md:w-4/6 lg:w-3/6 w-full border shadow-xl'>
+                     <Image className="image" src="/events/ottersec.png" alt="ottersec" layout="fill" />
                    </div>
                 </div>
                
@@ -55,7 +55,7 @@ const Ottersec: NextPage = () => {
 
              <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10'>
                 <CountDown date="2/20/2023 19:30:00"/>
-                <a href="https://osu.zoom.us/j/9068957286?pwd=bkhtRlNxL3E3SnZCTU1oSFNHcHJNQT09" className='font-bold text-xl text-center btn btn-primary h-auto'>
+                <a href="https://osu.zoom.us/j/9068957286?pwd=bkhtRlNxL3E3SnZCTU1oSFNHcHJNQT09" className='font-bold text-xl text-center btn btn-primary h-auto border shadow-xl'>
                     Enter Event
                 </a>
              </div>

@@ -1,5 +1,4 @@
 import { useEffect, useState, memo } from "react";
-import styles from '../styles/Timer.module.css'
 
 function CountDownTimer({date}: {date: string}) {
   const [eventTime, seteventTime] = useState(false);
@@ -38,7 +37,7 @@ function CountDownTimer({date}: {date: string}) {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className="">
       
 
       {eventTime ? (
