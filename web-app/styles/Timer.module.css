@@ -1,0 +1,35 @@
+.timer-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border: solid 2px white;
+    border-radius: 5px;
+    z-index: 2;
+  }
+  
+  .timer-inner {
+    color: #333;
+    display: flex;
+    border: solid 2px #fff;
+    padding: 2rem;
+    background-color: rgba(256, 256, 256, 0.8);
+    border-radius: 5px;
+  }
+  
+  .timer-segment {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .divider,
+  .time {
+    font-size: 7rem;
+  }
+  
+  .diver {
+    padding: 0 2rem;
+  }
+  
+  .label {
+    font-size: 2rem;
+  }

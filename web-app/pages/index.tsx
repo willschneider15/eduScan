@@ -50,9 +50,10 @@ const Home: NextPage = () => {
                    border p-6 shadow-xl relative"
                   
                    >
-                   <div className='flex flex-col'>
+                   <div className='flex flex-col pr-5'>
                     
-                     <h3 className="text-xl font-bold text-zinc-900">Grizzlython - Feb 2 to Mar 14</h3>
+                     <h3 className="text-xl font-bold text-zinc-900">Grizzlython</h3>
+                     <h2>Feb 2nd to Mar 14th</h2>
                      <p className="mt-4 font-medium text-zinc-500">
                      Hackathon hosted by Solana with $5 Million in global prizes with multiple tracks.
                      </p>
@@ -61,7 +62,7 @@ const Home: NextPage = () => {
                       target="_blank"
                       rel="noopener noreferrer">
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                         Read More
+                       More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                        </span>
                      </a>
@@ -84,72 +85,53 @@ const Home: NextPage = () => {
                  </div>
 
 
-                 {/* Near Hackathon */}
-                 
-                <div
-                   
-                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+
+
+
+
+
+
+                  {/* Ottersec */}
+                  <div
+                   className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
                    border p-6 shadow-xl relative"
                   
                    >
-                   <div className='flex flex-col'>
-                     <h3 className="text-xl font-bold text-zinc-900">Near Hack - Feb 8 to Feb 17</h3>
+                   <div className='flex flex-col pr-5'>
+                    
+                     <h3 className="text-xl font-bold text-zinc-900">Blockchain Security x OSU</h3>
+                     <h2>Feb 20th @7:30pm EST</h2>
                      <p className="mt-4 font-medium text-zinc-500">
-                     Hackathon hosted by Near with $5000 and 5000 Near token in prizes with multiple tracks.
+                     The Founder of Ottersec will be speaking with OSU about the importance of Blockchain Security.
                      </p>
                      <a  
-                      href="https://twitter.com/NearSocial_/status/1622690510631538703"
+                      href="/events/ottersec"
                       target="_blank"
                       rel="noopener noreferrer">
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                         Read More
+                         More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                        </span>
                      </a>
+                                      
                    </div>
-                   <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/nearHack.jpeg" alt="near" width={200} height={200}/>
-                   </div> 
                    
-                   <span className="absolute top-0 right-0 mt-2 mr-2">
+                   <div className='img_card_div'>
+                     <Image className="img_card rounded-lg" src="/events/ottersec.png" alt="ottersec" width={200} height={200}/>
+                     
+                   </div>
+
+                   {/* <span className="absolute top-0 right-0 mt-2 mr-2">
                    <span className="text-center text-red-500 font-medium">LIVE </span>
                        <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 mr-2">
                         <span className="absolute animate-ping h-full w-full rounded-full bg-red-500 opacity-75"></span>
                        </span>
 
-                     </span> 
-                       
+                     </span>  */}
+
                  </div>
 
-
-
-                  {/* NYU Blockchain */}
-                  <div
-                   
-                   className=" grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-                   border p-6  shadow-xl"
                   
-                   >
-                   <div className='flex flex-col'>
-                     <h3 className="text-xl font-bold text-zinc-900">NYU Blockchain - Feb 15th</h3>
-                     <p className="mt-4 font-medium text-zinc-500">
-                     Hosting a DeFi Workshop with Quickswap, Gamma, Gammaswap, Curve Finance, and Gains Network.
-                     </p>
-                     <a  
-                      href="https://forms.gle/3fRpTJB9reMJThBR7"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                         Read More
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </span>
-                     </a>
-                   </div>
-                   <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/nyuBlock.webp" alt="NYU" width={200} height={200}/>
-                   </div>
-                     
-                 </div>
 
 
 
@@ -161,8 +143,9 @@ const Home: NextPage = () => {
                    border p-6  shadow-xl"
                   
                  >
-                   <div className='flex flex-col'>
-                     <h3 className="text-xl font-bold text-zinc-900">Consensus - April 26-28</h3>
+                   <div className='flex flex-col pr-5'>
+                     <h3 className="text-xl font-bold text-zinc-900">Consensus</h3>
+                     <h2>April 26-28th</h2>
                      <p className="mt-4 font-medium text-zinc-500">
                       Join the Most Important Conversation in Crypto and Web3. Hosted in Austin, Texas.
                      </p>
@@ -171,7 +154,7 @@ const Home: NextPage = () => {
                       target="_blank"
                       rel="noopener noreferrer">
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                         Read More
+                       More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                        </span>
                      </a>
@@ -189,8 +172,9 @@ const Home: NextPage = () => {
                     border p-6  shadow-xl"
                    
                   >
-                    <div className='flex flex-col'>
-                      <h3 className="text-xl font-bold text-zinc-900">NFT LA - March 20-23</h3>
+                    <div className='flex flex-col pr-5'>
+                      <h3 className="text-xl font-bold text-zinc-900">NFT LA</h3>
+                      <h2>March 20-23th</h2>
                       <p className="mt-4 font-medium text-zinc-500">
                       Connect, co-create and experience the Web3 and NFT Community with thousands of the world's leaders, 
                       investors, brands, enthusiasts.
@@ -200,7 +184,7 @@ const Home: NextPage = () => {
                        target="_blank"
                        rel="noopener noreferrer">
                         <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                          Read More
+                        More Info
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </span>
                       </a>
