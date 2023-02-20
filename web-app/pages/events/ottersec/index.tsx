@@ -72,14 +72,24 @@ const Ottersec: NextPage = () => {
                  He will be speaking on the importance of blockchain security and his experiences in the space.
                  <br/>
                  <br/>
+                 After Roberts talk their will be a workshop on getting started with Hello World on Solana: 
+                  <a className="text-purple-700 underline" href='https://docs.solana.com/getstarted/hello-world'>https://docs.solana.com/getstarted/hello-world</a>
+                 <br/>
+                 <br/>
                  This virtual event is hosted by the Ohio State Blockchain club and is open to the public.
                  <br/>
                  <br/>
-                 Robert: <a className="text-purple-700 underline" href="https://robertchen.cc/">https://robertchen.cc/</a>
+                 Robert: <a className="text-purple-700 underline" href="https://robertchen.cc/"
+                 target="_blank"
+                 rel="noopener noreferrer">https://robertchen.cc/</a>
                  <br/>
-                 OtterSec: <a className="text-purple-700 underline" href="https://osec.io/">https://osec.io/</a>
+                 OtterSec: <a className="text-purple-700 underline" href="https://osec.io/"
+                 target="_blank"
+                 rel="noopener noreferrer">https://osec.io/</a>
                  <br/>
-                 Ohio State Blockchain Club: <a className="text-purple-700 underline" href="https://activities.osu.edu/involvement/student_organizations/find_a_student_org?i=7664885a-ea59-4af4-a36e-5e5d6f9542b6&l=C&c=Columbus&page=10">Ohio State Club Website</a>
+                 Ohio State Blockchain Club: <a className="text-purple-700 underline" href="https://activities.osu.edu/involvement/student_organizations/find_a_student_org?i=7664885a-ea59-4af4-a36e-5e5d6f9542b6&l=C&c=Columbus&page=10"
+                 target="_blank"
+                 rel="noopener noreferrer">Ohio State Club Website</a>
                 </p>
 
             </div>

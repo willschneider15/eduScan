@@ -97,8 +97,7 @@ const Events: NextPage = () => {
                      </p>
                      <a  
                       href="/events/ottersec"
-                      target="_blank"
-                      rel="noopener noreferrer">
+                      >
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
                          More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

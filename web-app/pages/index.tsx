@@ -105,9 +105,7 @@ const Home: NextPage = () => {
                      The Founder of Ottersec will be speaking with OSU about the importance of Blockchain Security.
                      </p>
                      <a  
-                      href="/events/ottersec"
-                      target="_blank"
-                      rel="noopener noreferrer">
+                      href="/events/ottersec">
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
                          More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -117,7 +115,7 @@ const Home: NextPage = () => {
                    </div>
                    
                    <div className='img_card_div'>
-                     <Image className="img_card rounded-lg" src="/events/ottersec.png" alt="ottersec" width={200} height={200}/>
+                     <Image className="img_card rounded-lg " src="/events/ottersec.png" alt="ottersec" width={200} height={200}/>
                      
                    </div>
 
