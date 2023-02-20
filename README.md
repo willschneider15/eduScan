@@ -1,6 +1,6 @@
-# Solteria
+# eduScan
 Welcome to our Monorepo for the Solana Grizzlython 
 
-web-app: Has our Next.js web app with docs: https://solteria-willschneider15.vercel.app <br/>
+web-app: Has our Next.js web app with docs: https://www.eduscan.xyz/ <br/>
 backpack: Hosts our xNFT application <br/>
-smart-contracts: Stores our backend logic <br/>
+
