@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'
 import groq from 'groq'
-import { client } from '../client'
+import { getClient } from "../lib/sanity.server"
 
 interface Post {
   _id: string;
@@ -15,11 +15,15 @@ interface Post {
 
 const events = ({ posts }: { posts: Post[] }) => {
 
+  console.log(posts)
+
     return(
         <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
 
         <div>
                 <h1>List of posts: </h1>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                
                 {posts.length > 0 && posts.map(
                       ({ _id, title = '', slug = { current: '' }, publishedAt = '' }: { _id: string, title?: string, slug?: { current: string }, publishedAt?: string }) =>
                     slug && (
@@ -31,9 +35,22 @@ const events = ({ posts }: { posts: Post[] }) => {
                       </li>
                     )
                 )}
-              </div>
 
-        {/* we should break this up by dynamically creating each component from a markdown file that automatically leave our site when time is up */}
+          </div>
+
+          {/* alternative option to pull posts here from kubowania index.js
+           <div className="posts-container">
+          {posts?.map((post) => (
+              <Link
+                key={post._id}
+                href="/posts/[slug]"
+                as={`/posts/${post.slug.current}`}
+                passHref
+              >
+                  <Card post={post}/>
+              </Link>
+          ))}
+      </div> */}
 
         {/* Grizzlython */}
         <div
@@ -164,10 +181,19 @@ const events = ({ posts }: { posts: Post[] }) => {
 
 }
 
-export async function getStaticProps() {
-  const posts = await client.fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-  `)
+export const getStaticProps = async ({ preview = false}) => {
+  const posts = await getClient(preview).fetch(groq`
+  *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+    _id,
+    title,
+    "username": author->username,
+    "categories": categories[]->{id, title},
+    "authorImage": author->avatar,
+    body,
+    mainImage,
+    slug,
+    publishedAt
+    }`)
   return {
     props: {
       posts

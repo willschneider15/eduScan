@@ -17,6 +17,7 @@
     "eslint-config-next": "^13.1.6",
     "groq": "^3.4.0",
     "next": "^13.1.6",
+    "next-sanity": "^4.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.8.1",

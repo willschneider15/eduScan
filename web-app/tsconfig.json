@@ -15,9 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "files": [
-    "@types/block-content-to-react.d.ts"
-  ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/post/[slug].js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/post/[slug].js", "components/card.js"],
   "exclude": ["node_modules"]
 }
