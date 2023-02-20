@@ -19,7 +19,7 @@ const Ottersec: NextPage = () => {
             <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
                   
                 <Head>
-                <title> eduScan | Ottersec </title>
+                <title> eduScan | OtterSec </title>
                 <link rel="icon" href="/eduScan.png" />
                 </Head>
             
