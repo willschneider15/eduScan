@@ -21,6 +21,7 @@ const Ottersec: NextPage = () => {
                 <Head>
                 <title> eduScan | OtterSec </title>
                 <link rel="icon" href="/eduScan.png" />
+                
                 </Head>
             
                 <Header/>
@@ -35,10 +36,23 @@ const Ottersec: NextPage = () => {
                 
                 <div className="flex w-full flex-row items-center justify-center">
                     <div className='image_container md:w-4/6 lg:w-3/6 w-full border shadow-xl'>
-                     <Image className="image" src="/events/ottersec.png" alt="ottersec" layout="fill" />
+                     {/* <Image className="image" src="/events/ottersec.png" alt="ottersec" layout="fill" /> */}
+                     
                    </div>
                 </div>
-               
+                {/* <iframe width="400" height="300"  title="YouTube video player"  frameBorder="0" allowFullScreen className='video'></iframe> */}
+              
+
+                <div className="video-container">
+                  <iframe
+                   src="https://www.youtube.com/embed/LWcKs-Zcf70"
+                   height="auto"
+                   className='video'
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen></iframe>
+                </div>
+
               </main>
 
 
