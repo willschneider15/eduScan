@@ -1,12 +1,14 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Link as ScrollLink} from 'react-scroll';
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Events from '../components/events'
+import groq from 'groq'
+import { getClient } from "../lib/sanity.server"
 
-const Home: NextPage = () => {
+const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
 
   return (
     <>
@@ -34,11 +36,9 @@ const Home: NextPage = () => {
 
               <div id="events" className="flex flex-col gap-3">
 
-                <h2 className="text-purple-700 font-bold text-xl">
-                  Upcoming Events
-                </h2>
+              <h2 className="text-purple-700 font-bold text-xl">Upcoming Events</h2>
                 
-              <Events posts={[]}/>
+              <Events posts={posts}/>
 
               </div>
               
@@ -51,5 +51,22 @@ const Home: NextPage = () => {
     
   )
 }
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getClient().fetch(groq`
+    *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+      _id,
+      title,
+      eventDate,
+      "username": author->username,
+      "categories": categories[]->{id, title},
+      "authorImage": author->avatar,
+      body,
+      mainImage,
+      slug,
+      publishedAt
+    }
+  `);
+  return { props: { posts } };
+};
 
-export default Home
+export default Home;

@@ -3,17 +3,23 @@ const Tag = ({ title }) => {
     const getColor = () => {
         let color
         switch (title.toLowerCase()) {
-            case 'travel':
-                color = 'rgb(210,138,138)'
+            case 'Event':
+                color = 'rgb(255, 242, 51)'
                 break
-            case 'food':
-                color = 'rgb(169,210,138)'
+            case 'AMA':
+                color = 'rgb(189, 51, 255)'
                 break
-            case 'family':
-                color = 'rgb(138,173,138)'
+            case 'Workshop':
+                color = 'rgb(51, 219, 255)'
                 break
+            case 'Guest Speaker':
+                color = 'rgb(117, 255, 51)'
+                break
+            case 'Panel':
+                color = 'rgb(255, 87, 51)'
+                    break  
             default:
-                color = 'rgb(129,138,210)'
+                color = 'rgb(0,0,0)'
         }
         return color
     }

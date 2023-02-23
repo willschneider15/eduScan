@@ -2,7 +2,7 @@ import { createPreviewSubscriptionHook, createCurrentUserHook } from 'next-sanit
 import createImageUrlBuilder from '@sanity/image-url'
 import { config } from './config'
 
-export const urlFor = ( source ) => createImageUrlBuilder(config).image(source)
+export const urlFor = ( source ) => createImageUrlBuilder(config).image(source) //display images on browser
 
 // export const usePreviewSubscription = createPreviewSubscriptionHook(config)
 
