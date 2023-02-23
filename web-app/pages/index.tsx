@@ -84,55 +84,6 @@ const Home: NextPage = () => {
 
                  </div>
 
-
-
-
-
-
-
-
-                  {/* Ottersec */}
-                  <div
-                   className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-                   border p-6 shadow-xl relative"
-                  
-                   >
-                   <div className='flex flex-col pr-5'>
-                    
-                     <h3 className="text-xl font-bold text-zinc-900">Blockchain Security x OSU</h3>
-                     <h2>Feb 20th @7:30pm EST</h2>
-                     <p className="mt-4 font-medium text-zinc-500">
-                     The Founder of Ottersec will be speaking with OSU about the importance of Blockchain Security.
-                     </p>
-                     <a  
-                      href="/events/ottersec">
-                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                         More Info
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </span>
-                     </a>
-                                      
-                   </div>
-                   
-                   <div className='img_card_div'>
-                     <Image className="img_card rounded-lg " src="/events/ottersec.png" alt="ottersec" width={200} height={200}/>
-                     
-                   </div>
-
-                   {/* <span className="absolute top-0 right-0 mt-2 mr-2">
-                   <span className="text-center text-red-500 font-medium">LIVE </span>
-                       <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 mr-2">
-                        <span className="absolute animate-ping h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                       </span>
-
-                     </span>  */}
-
-                 </div>
-
-                  
-
-
-
                   
                     {/* Consensus card */}
                     <div
@@ -194,6 +145,52 @@ const Home: NextPage = () => {
                   </div>
 
                 </div>
+
+                <h2 className="text-purple-700 font-bold text-xl pt-20">
+                  Completed Events
+                </h2>
+
+                
+                <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
+
+                  {/* Ottersec */}
+                  <div
+                   className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
+                   border p-6 shadow-xl relative"
+                  
+                   >
+                   <div className='flex flex-col pr-5'>
+                    
+                     <h3 className="text-xl font-bold text-zinc-900">Blockchain Security x OSU</h3>
+                     <h2>Feb 20th @7:30pm EST</h2>
+                     <p className="mt-4 font-medium text-zinc-500">
+                     The Founder of Ottersec will be speaking with OSU about the importance of Blockchain Security.
+                     </p>
+                     <a  
+                      href="/events/ottersec">
+                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                         More Info
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                       </span>
+                     </a>
+                                      
+                   </div>
+                   
+                   <div className='img_card_div'>
+                     <Image className="img_card rounded-lg " src="/events/ottersec.png" alt="ottersec" width={200} height={200}/>
+                     
+                   </div>
+
+                   {/* <span className="absolute top-0 right-0 mt-2 mr-2">
+                   <span className="text-center text-red-500 font-medium">LIVE </span>
+                       <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 mr-2">
+                        <span className="absolute animate-ping h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                       </span>
+
+                     </span>  */}
+
+                 </div>
+                 </div>
               </div>
               
               <Footer/>
