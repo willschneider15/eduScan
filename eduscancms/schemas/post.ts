@@ -9,10 +9,19 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => [
+        Rule.required().min(1).error('A title of min. 1 characters is required'),
+        Rule.max(50).error('Shorter titles are usually better')
+      ]
     }),
     defineField({
-      name: 'eventDate',
-      title: 'Event Date',
+      name: 'startDate',
+      title: 'Start date',
+      type: 'datetime',
+    }),
+    defineField({
+      name: 'endDate',
+      title: 'End date',
       type: 'datetime',
     }),
     defineField({
@@ -43,6 +52,7 @@ export default defineType({
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+      validation: Rule => Rule.required().min(1).error('At least one category must be selected.'),
     }),
     defineField({
       name: 'publishedAt',

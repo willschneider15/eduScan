@@ -6,7 +6,7 @@ import {PortableText} from '@portabletext/react'
 
 
 const Card = forwardRef(({ onClick, href, post }, ref) => {
-    const { title, eventDate, publishedAt, body, mainImage, username, authorImage, categories} = post
+    const { title, startDate, endDate, publishedAt, body, mainImage, username, authorImage, categories} = post
 
     return (
         <div
@@ -17,7 +17,7 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
         
                 <h3 className="text-xl font-bold text-zinc-900">{title}</h3>
 
-                <h2>{new Date(eventDate).toDateString()}</h2>
+                <h2>{new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}</h2>
 
                 <PortableText className="mt-4 font-medium text-zinc-500"
                 value={body}/>
