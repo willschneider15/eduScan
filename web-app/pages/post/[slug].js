@@ -1,4 +1,5 @@
 import groq from 'groq'
+import Tag from '../../lib/sanity.server'
 import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import {getClient} from '../../lib/sanity.server'

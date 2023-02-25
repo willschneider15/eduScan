@@ -13,39 +13,35 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
         className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
         border p-6 shadow-xl relative" href={href} onClick={onClick} ref={ref}>
         
-        <h3 className="text-xl font-bold text-zinc-900">{title}</h3>
-        <h2>Event Date: {new Date(eventDate).toDateString()}</h2>
+            <div className="flex flex-col h-full justify-between">
+        
+                <h3 className="text-xl font-bold text-zinc-900">{title}</h3>
 
-        <PortableText className="mt-4 font-medium text-zinc-500"
-        value={body}
-      />
-      
+                <h2>{new Date(eventDate).toDateString()}</h2>
+
+                <PortableText className="mt-4 font-medium text-zinc-500"
+                value={body}/>
+
+                <p>Published on: {new Date(publishedAt).toDateString()}</p>
+
+            </div>
+
+      <div>      
         <div className='img_card_div'>
             <img className="img_card rounded-lg" src={urlFor(mainImage)} alt={title + ' image'} width={200} height={200}/>
         </div>
 
-            {/* <hr/> */}
+        <div className="flex flex-col text-center tag-container text-black font-bold">
 
-            {/* <div className="info-container">
-                <p>Posted by: {username}</p>
-                <img
-                    className="avatar"
-                    alt={username + ' avatar'}
-                    src={urlFor(authorImage)}
-                />
-            </div> */}
-
-            <p>Published on: {new Date(publishedAt).toDateString()}</p>
-
-            <div className="tag-container">
-                {categories.map((category) => (
-                    <>
-                    { category && <Tag key={category} title={category?.title}/>}
-                    </>
-                    ))}
-            </div>
+            {categories.map((category) => (
+                category?.title && <Tag key={category.title} title={category.title}/>
+            ))}
 
         </div>
+
+    </div>
+        
+</div>
     )
 })
 
@@ -71,3 +67,17 @@ Live component
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </span>
         </a> */}
+
+                    {/* <hr/> */}
+
+            {/*
+            "username+avatar" component 
+            <div className="info-container">
+                <p>Posted by: {username}</p>
+                <img
+                    className="avatar"
+                    alt={username + ' avatar'}
+                    src={urlFor(authorImage)}
+                />
+            </div> */}
+
