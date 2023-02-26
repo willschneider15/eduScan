@@ -1,16 +1,31 @@
-import { memo, useState } from 'react';
+import { memo, useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from "next/link";
+import CreateUser from "./createUser";
+import dynamic from 'next/dynamic'
+import { AnchorWallet, useAnchorWallet, useWallet } from '@solana/wallet-adapter-react'
+import { PublicKey, Connection } from "@solana/web3.js";
+import { useGumSDK } from '../hooks/useGumSDK';
+
+const WalletMultiButtonDynamic = dynamic(
+    async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
+    { ssr: false }
+);
 
 
 function header() {
     const [active, setActive] = useState(false);
 
+    const wallet = useWallet();
+    const userPublicKey = wallet?.publicKey as PublicKey;
+    const connection = useMemo(() => new Connection("https://api.devnet.solana.com", "confirmed"), []);
+    const sdk = useGumSDK(connection, { preflightCommitment: "confirmed" }, "devnet");
+
     const handleClick = () => {
         setActive(!active);
     };
     return(
-        <nav className="flex items-center flex-wrap pb-10 pt-2  max-w-7xl px-2 sm:px-0 lg:px-8">
+        <nav className="flex items-center flex-wrap pb-10 pt-2  max-w-7xl ">
             <div className='relative flex h-16 items-center justify-between'>
                 <Link
                     className="flex items-center gap-4 lg:px-0"
@@ -45,18 +60,26 @@ function header() {
             <div
             className={`${
                 active ? '' : 'hidden'
-            }   w-full lg:inline-flex lg:flex-grow lg:w-auto md:pt-0 pt-2`}
+            }   w-full lg:inline-flex lg:flex-grow lg:w-auto md:pt-0 mt-4 bg-zinc-300 md:bg-zinc-50 p-4 rounded-xl `}
             >
-                <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto '>
-                   
+                <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto pt-2'>
+                    <Link href="/leadership">
+                        <h1 className="font-medium text-black hover:text-purple-700 transition-in duration-500 ease-out 
+                      border-b-2 border-transparent hover:border-purple-700 px-3 mr-6 mb-3 md:mb-0">
+                            Leadership
+                        </h1>
+                    </Link>
                     <Link href="https://medium.com/@eduScan.xyz/introducing-eduscan-blockchain-networking-for-higher-education-e58d05ddd35b"
                         target="_blank"
                         rel="noopener noreferrer">
                         <h1 className="font-medium text-black hover:text-purple-700 transition-in duration-500 ease-out 
-                      border-b-2 border-transparent hover:border-purple-700 px-3">
+                      border-b-2 border-transparent hover:border-purple-700 px-3 mr-6 sm:my-3">
                             About
                         </h1>
-                    </Link> 
+                    </Link>
+                    { sdk && (
+                    <WalletMultiButtonDynamic />
+                    )}
                 </div>
             </div>
 

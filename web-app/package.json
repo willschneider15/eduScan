@@ -6,8 +6,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@gumhq/react-sdk": "^1.0.7",
+    "@gumhq/ui-components": "^2.0.4",
     "@next/font": "^13.1.6",
-    "daisyui": "^2.50.0",
+    "@nextui-org/react": "^1.0.0-beta.12",
+    "@solana/wallet-adapter-base": "^0.9.22",
+    "@solana/wallet-adapter-react": "^0.15.30",
+    "@solana/wallet-adapter-react-ui": "^0.9.29",
+    "@solana/wallet-adapter-wallets": "^0.19.15",
+    "@solana/web3.js": "^1.73.3",
     "next": "^13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",

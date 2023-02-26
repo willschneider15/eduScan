@@ -7,6 +7,7 @@ import Footer from '../components/footer'
 
 const Home: NextPage = () => {
 
+
   return (
     <>
 
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
                   powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
                 </h2>
               </main>
-
+             
               <div id="events" className="flex flex-col gap-3">
 
                 <h2 className="text-purple-700 font-bold text-xl">
