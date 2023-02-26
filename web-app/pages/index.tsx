@@ -10,6 +10,7 @@ import { getClient } from "../lib/sanity.server"
 
 const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
 
+
   return (
     <>
 
@@ -33,14 +34,16 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
                   powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
                 </h2>
               </main>
-
+             
               <div id="events" className="flex flex-col gap-3">
 
-              <h2 className="text-purple-700 font-bold text-xl">Upcoming Events</h2>
+
+                  <h2 className="text-purple-700 font-bold text-xl">Upcoming Events</h2>
             
                   <Events posts={posts}/>
 
-            </div>
+              </div>
+
               
               <Footer/>
               
