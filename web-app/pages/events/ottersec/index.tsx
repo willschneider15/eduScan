@@ -6,6 +6,7 @@ import Header from '../../../components/header'
 import Footer from '../../../components/footer'
 import CountDown from '../../../components/countdown-timer'
 import { useState } from 'react';
+import { Button, Grid } from "@nextui-org/react";
 
 const Ottersec: NextPage = () => {
 
@@ -69,7 +70,7 @@ const Ottersec: NextPage = () => {
 
              <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10'>
                 <CountDown date="2/20/2023 19:30:00"/>
-                <a href="https://osu.zoom.us/j/9068957286?pwd=bkhtRlNxL3E3SnZCTU1oSFNHcHJNQT09" className='font-bold text-xl text-center btn btn-primary h-auto border shadow-xl'>
+                <a href="https://osu.zoom.us/j/9068957286?pwd=bkhtRlNxL3E3SnZCTU1oSFNHcHJNQT09" className='bg-purple-700 text-white font-bold text-xl text-center h-auto border shadow-xl rounded-xl py-4'>
                     Enter Event
                 </a>
              </div>

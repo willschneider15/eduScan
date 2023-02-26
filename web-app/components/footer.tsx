@@ -11,7 +11,7 @@ function footer() {
                 <div className="mr-12 lg:block">
                     
                     <p>Built by Solteria</p>
-                    <p>v1.0.0</p>
+                    <p>v1.0.1</p>
                     
                 </div> 
 
