@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -15,8 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/post/[slug].js", "components/card.js", "components/events.js", "pages/index.js"],
-
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
