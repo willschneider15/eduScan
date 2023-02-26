@@ -78,7 +78,10 @@ function header() {
                         </h1>
                     </Link>
                     { sdk && (
-                    <WalletMultiButtonDynamic />
+                        <div className='bg-purple-700 text-white rounded-xl font-medium'>
+                            <WalletMultiButtonDynamic  />
+                        </div>
+                   
                     )}
                 </div>
             </div>
