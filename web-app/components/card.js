@@ -11,18 +11,27 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
     return (
         <div
         className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-        border p-6 shadow-xl relative" href={href} onClick={onClick} ref={ref}>
+        border p-6 shadow-xl relative " href={href} onClick={onClick} ref={ref}>
         
-            <div className="flex flex-col h-full justify-between">
+            <div className="flex flex-col pr-5">
         
                 <h3 className="text-xl font-bold text-zinc-900">{title}</h3>
 
-                <h2>{new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}</h2>
+                <h2 className='mb-4'>{new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}</h2>
 
                 <PortableText className="mt-4 font-medium text-zinc-500"
                 value={body}/>
 
-                <p>Published on: {new Date(publishedAt).toDateString()}</p>
+                {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
+                <a  
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer">
+                       <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
+                       More Info
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                       </span>
+                     </a>
 
             </div>
 
@@ -33,9 +42,9 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
 
         <div className="flex flex-col text-center tag-container text-black font-bold">
 
-            {categories.map((category) => (
+            {/* {categories.map((category) => (
                 category?.title && <Tag key={category.title} title={category.title}/>
-            ))}
+            ))} */}
 
         </div>
 
