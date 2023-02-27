@@ -3,6 +3,7 @@ import Tag from './Tag'
 import { forwardRef } from 'react'
 import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
+import Link from 'next/link'
 
 
 const Card = forwardRef(({ onClick, href, post }, ref) => {
@@ -11,7 +12,7 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
     return (
         <div
         className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-        border p-6 shadow-xl relative " href={href} onClick={onClick} ref={ref}>
+        border p-6 shadow-xl relative " >
         
             <div className="flex flex-col pr-5">
         
@@ -23,15 +24,17 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
                 value={body}/>
 
                 {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
-                <a  
-                      href=""
-                      target="_blank"
-                      rel="noopener noreferrer">
+                    <Link
+                        key={post._id}
+                        href="/posts/[slug]"
+                        as={`/posts/${post.slug.current}`}
+                        passHref
+                    >
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
                        More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                        </span>
-                     </a>
+                    </Link>
 
             </div>
 
@@ -40,11 +43,11 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
             <img className="img_card rounded-lg" src={urlFor(mainImage)} alt={title + ' image'} width={200} height={200}/>
         </div>
 
-        <div className="flex flex-col text-center tag-container text-black font-bold">
+        <div className="flex flex-row gap-x-2 text-center tag-container text-black font-bold">
 
-            {/* {categories.map((category) => (
-                category?.title && <Tag key={category.title} title={category.title}/>
-            ))} */}
+            {categories.map((category) => (
+                <Tag key={category.title} title={category.title}/>
+            ))}
 
         </div>
 

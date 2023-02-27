@@ -1,6 +1,6 @@
 import React, { memo, useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link'
+
 import groq from 'groq'
 import Card from './card'
 import { getClient } from "../lib/sanity.server"
@@ -15,14 +15,9 @@ const events = ({ posts }) => {
 
                 <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 {posts?.map((post) => (
-              <Link
-                key={post._id}
-                href="/posts/[slug]"
-                as={`/posts/${post.slug.current}`}
-                passHref
-              >
+              
                   <Card post={post}/>
-              </Link>
+              
           ))}
       </div>
     ); 

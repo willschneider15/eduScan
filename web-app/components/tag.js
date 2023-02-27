@@ -1,31 +1,35 @@
+import { Badge } from "@nextui-org/react";
 const Tag = ({ title }) => {
 
     const getColor = () => {
         let color
         switch (title.trim()) {
             case 'Event':
-                color = 'rgb(68, 109, 137)'
+                color = 'primary'
                 break
             case 'AMA':
-                color = 'rgb(41, 157, 145)'
+                color = 'secondary'
                 break
             case 'Workshop':
-                color = 'rgb(255, 244, 184)'
+                color = 'success'
                 break
             case 'Guest Speaker':
-                color = 'rgb(249, 143, 55)'
+                color = 'warning'
                 break
             case 'Panel':
-                color = 'rgb(222, 60, 49)'
+                color = 'error'
                     break  
             default:
-                color = 'rgb(0,0,0)'
+                color = 'primary'
         }
         return color
     }
 
     return (
-        <div style={{ backgroundColor: getColor()}} className="tag">{title}</div>
+        <Badge color={getColor()} variant="bordered" enableShadow>
+            {title}
+            {/* <div style={{ backgroundColor: getColor()}} className="rounded-lg"></div> */}
+        </Badge>
     )
 }
 
