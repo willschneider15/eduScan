@@ -27,7 +27,7 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
 
               <main className="flex flex-col w-full flex-1 items-center justify-center px-20 text-center my-40 md:my-60">
                 <div className="flex w-full flex-row items-center justify-center">
-                  <h1 className="flex flex-col text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400 pb-3">
+                  <h1 className="flex flex-col text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-teal-400 pb-3">
                     Onboarding the Next Wave of Web3 Builders
                   </h1>
                 </div>
@@ -37,11 +37,11 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
                 <div className="">
 
 
-                <Link className="rounded-none px-7 font-bold bg-gradient-to-r from-purple-300 to-teal-400 pb-4"
+                {/* <Link className="rounded-none px-7 font-bold bg-gradient-to-r from-purple-300 to-teal-400 pb-4"
                   href="/register"
                   >  
                   Enter App
-                </Link>
+                </Link> */}
                 </div>
 
               </main>
@@ -51,7 +51,7 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
               <div id="events" className="flex flex-col gap-5">
 
 
-                  <h2 className="text-purple-700 font-bold text-4xl">Upcoming Events</h2>
+                  <h2 className="text-purple-700 font-bold text-2xl">Upcoming Events</h2>
             
                   <Events posts={posts}/>
 

@@ -27,7 +27,7 @@ const Events: NextPage = () => {
 
               <div id="events" className="flex flex-col gap-3">
 
-                <h2 className="text-purple-700 font-bold text-xl">
+                <h2 className="text-purple-700 font-bold text-2xl">
                   Upcoming Events
                 </h2>
 
@@ -139,7 +139,7 @@ const Events: NextPage = () => {
 
                 </div>
 
-                <h2 className="text-purple-700 font-bold text-xl pt-20">
+                <h2 className="text-purple-700 font-bold text-2xl pt-20">
                   Completed Events
                 </h2>
 
