@@ -37,7 +37,8 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: [{ type: 'author' }],
+      validation: (Rule) => Rule.required().error('Please select an author'),
     }),
     defineField({
       name: 'mainImage',

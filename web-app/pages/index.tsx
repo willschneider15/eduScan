@@ -68,23 +68,25 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
     
   )
 }
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getClient().fetch(groq`
+export const getStaticProps = async ({ preview = false}) => {
+  const posts = await getClient(preview).fetch(groq`
     *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
-      _id,
-      title,
-      startDate,
-      endDate,
-      "username": author->username,
-      "categories": categories[]->{id, title},
-      "authorImage": author->avatar,
-      body,
-      mainImage,
-      slug,
-      publishedAt
-    }
-  `);
-  return { props: { posts } };
-};
+     _id,
+     title,
+     "username": author->username,
+     "categories": categories[]->{id, title},
+     "authorImage": author->avatar,
+     body,
+     mainImage,
+     slug,
+     publishedAt
+     }`)
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
 
 export default Home;

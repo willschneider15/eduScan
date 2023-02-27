@@ -1,18 +1,18 @@
 import { urlFor }  from '../lib/sanity'
 import Tag from './Tag'
 import { forwardRef } from 'react'
-import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import Link from 'next/link'
 
 
-const Card = forwardRef(({ onClick, href, post }, ref) => {
-    const { title, startDate, endDate, publishedAt, body, mainImage, username, authorImage, categories} = post
+const Card = forwardRef(({ post }, ref) => {
+
+    const { title, startDate, endDate, body, mainImage, categories, username, authorImage, publishedAt} = post
 
     return (
         <div
         className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 md:grid-cols-2 md:gap-2
-        border p-6 shadow-xl relative " >
+        border p-6 shadow-xl relative">
         
             <div className="flex flex-col pr-5">
         
@@ -24,10 +24,11 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
                 value={body}/>
 
                 {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
+
                     <Link
                         key={post._id}
-                        href="/posts/[slug]"
-                        as={`/posts/${post.slug.current}`}
+                        href="/post/[slug]"
+                        as={`/post/${post.slug.current}`}
                         passHref
                     >
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
@@ -40,7 +41,7 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
 
       <div>      
         <div className='img_card_div'>
-            <img className="img_card rounded-lg" src={urlFor(mainImage)} alt={title + ' image'} width={200} height={200}/>
+            <img className="img_card rounded-lg" src={urlFor(mainImage)} alt={title + ' image'}/>
         </div>
 
         <div className="flex flex-row gap-x-2 text-center tag-container text-black font-bold">
@@ -50,6 +51,16 @@ const Card = forwardRef(({ onClick, href, post }, ref) => {
             ))}
 
         </div>
+
+        {/* <div className="flex flex-row">
+                <p>{username}</p>
+                <img
+                    className="avatar"
+                    alt={username + ' avatar'}
+                    src={urlFor(authorImage)}
+                     width={50} height={20} 
+                />
+            </div> */}
 
     </div>
         
@@ -69,27 +80,3 @@ Live component
 
   </span> 
 */}
-
-        {/* <a  
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer">
-                <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </span>
-        </a> */}
-
-                    {/* <hr/> */}
-
-            {/*
-            "username+avatar" component 
-            <div className="info-container">
-                <p>Posted by: {username}</p>
-                <img
-                    className="avatar"
-                    alt={username + ' avatar'}
-                    src={urlFor(authorImage)}
-                />
-            </div> */}
-
