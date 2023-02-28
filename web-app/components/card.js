@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Card = forwardRef(({ post }, ref) => {
 
-    const { title, startDate, endDate, body, mainImage, categories, username, authorImage, publishedAt} = post
+    const { title, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt} = post
 
     return (
         <div

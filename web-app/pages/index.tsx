@@ -73,6 +73,8 @@ export const getStaticProps = async ({ preview = false}) => {
     *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
      _id,
      title,
+     host,
+     location,
      "username": author->username,
      "categories": categories[]->{id, title},
      "authorImage": author->avatar,

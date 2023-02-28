@@ -10,8 +10,25 @@ export default defineType({
       title: 'Title',
       type: 'string',
       validation: Rule => [
-        Rule.required().min(1).error('A title of min. 1 characters is required'),
+        Rule.required().min(2).error('A title of min. 2 character(s) is required'),
         Rule.max(50).error('Shorter titles are usually better')
+      ]
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    }),
+    defineField({
+      name:'host',
+      title:'Hosted By',
+      type:'string',
+      validation: Rule => [
+        Rule.required().min(2).error('A host name of minimum 2 character(s) is required')
       ]
     }),
     defineField({
@@ -25,13 +42,12 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      name:'location',
+      title:'Location',
+      type:'string',
+      validation: Rule => [
+        Rule.required().min(2).error('A location of minimum 2 character(s) is required')
+      ]
     }),
     defineField({
       name: 'author',
