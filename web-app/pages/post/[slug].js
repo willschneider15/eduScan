@@ -83,7 +83,7 @@ const Post = ({post}) => {
              </div>
 
              <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10'>
-                <CountDown date="2/20/2023 19:30:00"/>
+                <CountDown date={new Date(startDate).toDateString()}/>
                 <a href="" className='bg-purple-700 text-white font-bold text-xl text-center h-auto border shadow-xl rounded-xl py-4'>
                     Enter Event
                 </a>
@@ -96,7 +96,7 @@ const Post = ({post}) => {
                 <div>
 
                     <div className="flex flex-rowS">
-                        <h3>Author: <strong>{username}</strong></h3>
+                        <h3>Author: <strong>{username}</strong> </h3>
 
                         <img
                           className="w-10 h-10 ml-2"
