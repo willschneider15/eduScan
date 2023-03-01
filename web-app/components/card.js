@@ -20,7 +20,7 @@ const Card = forwardRef(({ post }, ref) => {
 
                 <h2 className='mb-4'>{new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}</h2>
 
-                <h2 className="mt-4 font-medium text-zinc-500"> {blurb} </h2>
+                <h2 className="font-medium text-zinc-500"> {blurb} </h2>
 
                 {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
 

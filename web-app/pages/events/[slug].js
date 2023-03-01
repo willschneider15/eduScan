@@ -78,7 +78,7 @@ const Post = ({post}) => {
                         </>
                     </h2>
                 
-                    <div className="items-center m-auto text-center">
+                    <div className="flex flex-row items-center m-auto text-center gap-x-4">
                     {post.categories?.map((category) => (
                         <>
                             {category && <Tag key={category.id} title={category.title}/>}
