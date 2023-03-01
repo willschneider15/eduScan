@@ -85,10 +85,23 @@ export default defineType({
       title: 'Published at',
       type: 'datetime',
     }),
+
+    defineField({
+      name: 'blurb',
+      title: 'Blurb',
+      type: 'string',
+      validation: Rule => [
+        Rule.required()
+      ]
+    }),
+
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: Rule => [
+        Rule.required()
+      ]
     }),
   ],
 

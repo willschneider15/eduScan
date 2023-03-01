@@ -32,7 +32,7 @@ const Post = ({post}) => {
     }
 
 
-    const {title, host, mainImage, location, link, categories, body, authorImage, username, about, startDate, endDate} = post
+    const {title, host, mainImage, location, link, categories, blurb, body, authorImage, username, about, startDate, endDate} = post
 
     return (
         <div className='bg-zinc-50 px-10'>
@@ -97,6 +97,8 @@ const Post = ({post}) => {
              </div>
 
                 <hr/>
+
+            <h2> {blurb} </h2>
             
             <PortableText value={body} components={PostComponents}/>
 
@@ -133,6 +135,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]
   "about": author-> bio,
   "categories": categories[]->{id, title}, 
   "authorImage": author-> avatar,
+  blurb,
   body,
   startDate, 
   endDate,

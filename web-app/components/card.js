@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Card = forwardRef(({ post }, ref) => {
 
-    const { title, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt } = post
+    const { title, blurb, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt } = post
 
     return (
         <div
@@ -20,8 +20,7 @@ const Card = forwardRef(({ post }, ref) => {
 
                 <h2 className='mb-4'>{new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}</h2>
 
-                <PortableText className="mt-4 font-medium text-zinc-500"
-                value={body}/>
+                <h2 className="mt-4 font-medium text-zinc-500"> {blurb} </h2>
 
                 {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
 
