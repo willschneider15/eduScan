@@ -1,0 +1,143 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 6rem;
+    min-height: 100vh;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  .leftContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .walletButtons {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .button {
+    background-color: #3d3d3d;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #4d4d4d;
+  }
+  
+  .listContainer {
+    background-color: #2e2e2e;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-top: 1em;
+    word-wrap: break-word;
+  }
+  
+  .userCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .userCard:hover {
+    background-color: #3d3d3d;
+    border-radius: 0.5em;
+  }
+  
+  .userNumber {
+    width: 2em;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+  }
+  
+  .userInfo {
+    margin-left: 1em;
+  }
+  
+  .userName {
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  .userEmail {
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  .userAuthority {
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  .title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .componentContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    padding: 2em;
+    border: #fff solid 1px;
+    border-radius: 0.5em;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 100%;
+    margin-bottom: 10px;
+  
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-right: 0.5em;
+  }

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useCreateUser, SDK } from '@gumhq/react-sdk';
