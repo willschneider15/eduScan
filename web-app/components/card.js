@@ -1,18 +1,13 @@
 import { urlFor }  from '../lib/sanity'
-import Tag from './tag'
+import Tag from './Tag'
 import { forwardRef } from 'react'
 import {PortableText} from '@portabletext/react'
 import Link from 'next/link'
-import type { Post } from '../lib/sanity.queries'
 
 
-const Card = (props:  Pick<Post, 
-    "body" | "title" | "url" | "startDate" | "endDate" | "mainImage" | "categories" | "host" | "location" | "username" | "authorImage" | "publishedAt" | "slug" | "_id"
-    >
-    ) => {
+const Card = forwardRef(({ post }, ref) => {
 
-    const { _id, title, url, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt, slug} = props
-    const imageUrl = urlFor(mainImage).url()
+    const { title, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt} = post
 
     return (
         <div
@@ -24,20 +19,16 @@ const Card = (props:  Pick<Post,
                 <h3 className="text-xl font-bold text-zinc-900">{title}</h3>
 
                 <h2 className='mb-4'>{new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}</h2>
-         
-                    
-                <div className="mt-4 font-medium text-zinc-500">
-                    <PortableText 
-                    value={body}/>
-                </div>
-               
+
+                <PortableText className="mt-4 font-medium text-zinc-500"
+                value={body}/>
 
                 {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
 
                     <Link
-                        key={_id}
+                        key={post._id}
                         href="/events/[slug]"
-                        as={`/events/${slug}`}
+                        as={`/events/${post.slug.current}`}
                         passHref
                     >
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
@@ -50,7 +41,7 @@ const Card = (props:  Pick<Post,
 
       <div>      
         <div className='img_card_div'>
-            <img className="img_card rounded-lg" src={imageUrl} alt={title + ' image'}/>
+            <img className="img_card rounded-lg" src={urlFor(mainImage)} alt={title + ' image'}/>
         </div>
 
         <div className="flex flex-row mt-4 gap-x-2 text-center tag-container text-black font-bold">
@@ -71,11 +62,11 @@ const Card = (props:  Pick<Post,
                 />
             </div> */}
 
-        </div>
-        
     </div>
-)
-}
+        
+</div>
+    )
+})
 
 export default Card
 
