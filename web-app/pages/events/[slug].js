@@ -27,6 +27,11 @@ const Post = ({post}) => {
 
     console.log(post)
 
+    if (!post) {
+        return <div>Loading...</div>;
+    }
+
+
     const {title, host, mainImage, location, link, categories, body, authorImage, username, about, startDate, endDate} = post
 
     return (
