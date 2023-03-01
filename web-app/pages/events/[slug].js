@@ -7,6 +7,7 @@ import CountDown from '../../components/countdown-timer'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Head from 'next/head'
+import { User , Card} from "@nextui-org/react";
 
 
 const PostComponents = {
@@ -68,55 +69,64 @@ const Post = ({post}) => {
 
                 </main>
 
-                <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-3">
-                    <h2 className=" font-bold text-xl text-center">
+                <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10">
+                    <h2 className="items-center m-auto font-bold text-xl ">
+                        <>
                         Time: {new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}
+                        <br/>
+                        Location: {location}
+                        </>
                     </h2>
-
-                    <div className="flex flex-rom gap-x-4 items-center m-auto text-center">
-                    {categories?.map((category) => (
+                
+                    <div className="items-center m-auto text-center">
+                    {post.categories?.map((category) => (
                         <>
                             {category && <Tag key={category.id} title={category.title}/>}
                         </>
                     ))}
                 </div>
 
-                <h2 className="font-bold text-xl text-center">
-                    Location: {location}
-                </h2>
+               
 
              </div>
 
-             <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10'>
+             <div className='grid w-full grid-cols-1 items-stretch gap-10 md:grid-cols-2 my-10'>
                 <CountDown date={new Date(startDate).toDateString()}/>
 
-                <a href={link} target="_blank" className='bg-purple-700 text-white font-bold text-xl text-center h-auto border shadow-xl rounded-xl py-4'>
+                <a href={link} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className='bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border shadow-xl rounded-xl py-8 px-20'>
                     Enter Event
                 </a>
                 
              </div>
 
                 <hr/>
-
-            <h2> {blurb} </h2>
+            <h2 className='font-bold text-xl'>
+                About Event:
+            </h2>
+            <h2 className='font-bold'> {blurb} </h2>
+            <br/>
+            
             
             <PortableText value={body} components={PostComponents}/>
 
-                <div>
+            <Card className='flex flex-col md:w-3/5 w-5/6 m-auto md:mx-0 flex-1   md:px-20 my-10 p-10'
+            variant="bordered">
 
-                    <div className="flex flex-rowS">
-                        <h3>Author: <strong>{username}</strong> </h3>
+                    <User
+                        className="pb-5"
+                        src={urlFor(authorImage).url()}
+                        name={username}
+                        alt={`${username} avatar`}
+                        color="secondary"
+                        bordered
+                    />
+                    <Card.Divider />
+                    <p className='pt-5'><b>About Author: </b>{about} </p>
 
-                        <img
-                          className="w-10 h-10 ml-2"
-                          src={urlFor(authorImage).url()}
-                          alt={`${username} avatar`}
-                        />
-                    </div>
-
-                        <p>About Author: {about} </p>
-
-                    </div>
+            </Card>
 
             </article>}
 
