@@ -1,5 +1,5 @@
 import { urlFor }  from '../lib/sanity'
-import Tag from './Tag'
+import Tag from './tag'
 import { forwardRef } from 'react'
 import {PortableText} from '@portabletext/react'
 import Link from 'next/link'
