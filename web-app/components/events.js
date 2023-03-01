@@ -23,25 +23,7 @@ const events = ({ posts }) => {
 
 }
 
-export const getStaticProps = async ({ preview = false}) => {
-  const posts = await getClient(preview).fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
-     _id,
-     title,
-     "username": author->username,
-     "categories": categories[]->{id, title},
-     "authorImage": author->avatar,
-     body,
-     mainImage,
-     slug,
-     publishedAt
-     }`)
-  return {
-    props: {
-      posts,
-    },
-  }
-}
+
 
 
 export default memo(events);

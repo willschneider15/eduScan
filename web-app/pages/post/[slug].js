@@ -68,7 +68,7 @@ const Post = ({post}) => {
                         Time: {new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}
                     </h2>
 
-                    <div className="text-center">
+                    <div className="flex flex-rom gap-x-4 items-center m-auto text-center">
                     {categories?.map((category) => (
                         <>
                             {category && <Tag key={category.id} title={category.title}/>}

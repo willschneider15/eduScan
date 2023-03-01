@@ -7,20 +7,25 @@ const Tag = ({ title }) => {
             case 'Event':
                 color = 'primary'
                 break
-            case 'AMA':
+
+            case 'Hackathon':
                 color = 'secondary'
                 break
+
             case 'Workshop':
                 color = 'success'
                 break
+
             case 'Guest Speaker':
                 color = 'warning'
                 break
+
             case 'Panel':
                 color = 'error'
-                    break  
+                    break 
+
             default:
-                color = 'primary'
+                color = 'default'
         }
         return color
     }

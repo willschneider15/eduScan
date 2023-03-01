@@ -44,12 +44,12 @@ const Card = forwardRef(({ post }, ref) => {
             <img className="img_card rounded-lg" src={urlFor(mainImage)} alt={title + ' image'}/>
         </div>
 
-        <div className="flex flex-row gap-x-2 text-center tag-container text-black font-bold">
-
-            {categories.map((category) => (
-                <Tag key={category.title} title={category.title}/>
+        <div className="flex flex-row mt-4 gap-x-2 text-center tag-container text-black font-bold">
+            {categories?.map((category) => (
+                <>
+                    {category && <Tag key={category.id} title={category.title}/>}
+                </>
             ))}
-
         </div>
 
         {/* <div className="flex flex-row">
