@@ -16,7 +16,7 @@
     "incremental": true
   },
 
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/events/[slug].js", "components/card.tsx", "components/events.js", "pages/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/events/[slug].tsx", "components/card.tsx", "components/events.tsx", "pages/index.js"],
 
   "exclude": ["node_modules"]
 }

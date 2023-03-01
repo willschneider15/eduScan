@@ -6,7 +6,7 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import Events from '../components/events'
 import groq from 'groq'
-import { getClient } from "../lib/sanity.server"
+import { client } from "../lib/sanity.server"
 import Link from 'next/link';
 
 const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
@@ -69,10 +69,11 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
   )
 }
 export const getStaticProps = async ({ preview = false}) => {
-  const posts = await getClient(preview).fetch(groq`
+  const posts = await client.fetch(groq`
     *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
      _id,
      title,
+     url,
      host,
      location,
      startDate,endDate,

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import groq from 'groq'
 import Card from './card'
-import { getClient } from "../lib/sanity.server"
+import { client } from "../lib/sanity.server"
 import Link from 'next/link'
 import type { Post } from '../lib/sanity.queries'
 
@@ -14,11 +14,11 @@ const events = ({ posts }: { posts: Post[] }) => {
     <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
 
             <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
-            {posts?.map((post) => (
+            {posts.map((post) => (
                
               <Card 
               title={post.title}
-              _id={post._id}
+           
               startDate={post.startDate}
               endDate={post.endDate}
               body={post.body}

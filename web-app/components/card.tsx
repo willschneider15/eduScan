@@ -6,12 +6,18 @@ import Link from 'next/link'
 import type { Post } from '../lib/sanity.queries'
 
 
-const Card = (props:  Pick<Post, 
-    "body" | "title" | "url" | "startDate" | "endDate" | "mainImage" | "categories" | "host" | "location" | "username" | "authorImage" | "publishedAt" | "slug" | "_id"
-    >
-    ) => {
+export default function Card({
+    title,
 
-    const { _id, title, url, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt, slug} = props
+    startDate,
+    endDate,
+    body,
+    mainImage,
+    categories,
+    slug,
+  }: Omit<Post, '_id'>) {
+
+    // const { _id, title, url, startDate, endDate, body, mainImage, categories, host, location, username, authorImage, publishedAt, slug} = props
     const imageUrl = urlFor(mainImage).url()
 
     return (
@@ -34,12 +40,9 @@ const Card = (props:  Pick<Post,
 
                 {/* <p>Published on: {new Date(publishedAt).toDateString()}</p> */}
 
-                    <Link
-                        key={_id}
-                        href="/events/[slug]"
-                        as={`/events/${slug}`}
-                        passHref
-                    >
+                    <Link href={`/events/${slug}`} className="hover:underline">
+                   
+                
                        <span className='mt-4 flex cursor-pointer items-center gap-2 font-medium hover:text-purple-700 text-black  '>
                        More Info
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" aria-hidden="true" height="14"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -77,7 +80,6 @@ const Card = (props:  Pick<Post,
 )
 }
 
-export default Card
 
 {/*
 Live component           

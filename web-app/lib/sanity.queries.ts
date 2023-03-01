@@ -4,6 +4,7 @@ import { Url } from 'next/dist/shared/lib/router/router'
 const postFields = groq`
   _id,
   title,
+  url,
   date,
   excerpt,
   coverImage,
@@ -53,7 +54,7 @@ export interface Post {
   date?: string
   excerpt?: string
   author?: Author
-  slug?: string
+  slug?: any
   content?: any
   body?: any
   startDate?: any

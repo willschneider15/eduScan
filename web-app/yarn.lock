@@ -1561,7 +1561,7 @@
     get-it "^8.0.9"
     pkg-dir "^5.0.0"
 
-"@sanity/client@^5", "@sanity/client@^5.2.0":
+"@sanity/client@^5", "@sanity/client@^5.2.0", "@sanity/client@^5.2.2":
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-5.2.2.tgz#f453cb88f874e8892d3e0bccbdcdb5d994f0d169"
   integrity sha512-AhOLSIZI0IO6/vDYYQekhAokqiAmDW2bVvNx3xW8T2hpJLRKHsw98Y+iOcX4dnH6y1Y7IO6upgb76D35xa2Szg==
