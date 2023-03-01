@@ -75,6 +75,7 @@ export const getStaticProps = async ({ preview = false}) => {
      title,
      host,
      location,
+     link,
      startDate,endDate,
      "username": author->username,
      "categories": categories[]->{id, title},

@@ -50,6 +50,15 @@ export default defineType({
       ]
     }),
     defineField({
+      name:'link',
+      title:'Link',
+      type:'url',
+      validation: Rule => Rule.uri({
+        scheme: ['https'],
+        allowRelative: false
+      }).required()
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',

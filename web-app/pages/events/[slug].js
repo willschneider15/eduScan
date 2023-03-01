@@ -27,7 +27,7 @@ const Post = ({post}) => {
 
     console.log(post)
 
-    const {title, host, mainImage, location, categories, body, authorImage, username, about, startDate, endDate} = post
+    const {title, host, mainImage, location, link, categories, body, authorImage, username, about, startDate, endDate} = post
 
     return (
         <div className='bg-zinc-50 px-10'>
@@ -84,9 +84,11 @@ const Post = ({post}) => {
 
              <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10'>
                 <CountDown date={new Date(startDate).toDateString()}/>
-                <a href="" className='bg-purple-700 text-white font-bold text-xl text-center h-auto border shadow-xl rounded-xl py-4'>
+
+                <a href={link} target="_blank" className='bg-purple-700 text-white font-bold text-xl text-center h-auto border shadow-xl rounded-xl py-4'>
                     Enter Event
                 </a>
+                
              </div>
 
                 <hr/>
@@ -129,6 +131,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]
   body,
   startDate, 
   endDate,
+  link,
   mainImage,
   postedAt
 }`
