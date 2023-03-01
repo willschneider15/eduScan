@@ -1,9 +1,16 @@
 import { Badge } from "@nextui-org/react";
-const Tag = ({ title }) => {
-
+import type { Post } from '../lib/sanity.queries'
+export type Color = "default" | "primary" | "secondary" | "success" | "warning" | "error" | undefined;
+const Tag = (props: Pick<
+    Post,
+    'title'
+    >
+    ) => {
+    const { title } = props
+    
     const getColor = () => {
         let color
-        switch (title.trim()) {
+        switch (title!.trim()) {
             case 'Event':
                 color = 'primary'
                 break
@@ -27,7 +34,8 @@ const Tag = ({ title }) => {
             default:
                 color = 'default'
         }
-        return color
+        let myColor = color as Color
+        return myColor
     }
 
     return (
