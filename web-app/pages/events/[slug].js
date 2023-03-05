@@ -32,8 +32,27 @@ const Post = ({post}) => {
         return <div>Loading...</div>;
     }
 
-
     const {title, host, mainImage, location, link, categories, blurb, body, authorImage, username, about, startDate, endDate} = post
+
+    
+    const formattedStartDate = new Date(startDate).toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+    });
+    const formattedEndDate = new Date(endDate).toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
+
+    const eventDate = startDate;
 
     return (
         <div className='bg-zinc-50 px-10'>
@@ -72,7 +91,7 @@ const Post = ({post}) => {
                 <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2 my-10">
                     <h2 className="items-center m-auto font-bold text-xl ">
                         <>
-                        Time: {new Date(startDate).toDateString()} - {new Date(endDate).toDateString()}
+                        Time: {`${formattedStartDate} - ${formattedEndDate}`}
                         <br/>
                         Location: {location}
                         </>
@@ -91,7 +110,7 @@ const Post = ({post}) => {
              </div>
 
              <div className='grid w-full grid-cols-1 items-stretch gap-10 md:grid-cols-2 my-10'>
-                <CountDown date={new Date(startDate).toDateString()}/>
+                <CountDown date={eventDate} />
 
                 <a href={link} 
                 target="_blank"
