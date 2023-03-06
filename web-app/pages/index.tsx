@@ -56,7 +56,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                   <Events posts={upcoming}/>
 
                   
-                  <h2 className="text-purple-700 font-bold text-2xl">Previous Events</h2>
+                  <h2 className="text-purple-700 font-bold text-2xl pt-10">Previous Events</h2>
             
                   <Events posts={previous}/>
 
