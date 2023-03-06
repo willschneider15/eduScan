@@ -39,7 +39,7 @@ function CountDownTimer({date}: {date: string}) {
   return (
     <div className="">
       {eventTime ? (
-        <div className="text-centered m-auto ">
+        <div className="text-centered m-auto h-auto py-10">
           <h1 className="font-bold text-xl text-center text-black">Event Started</h1>
         </div>
       ) : (

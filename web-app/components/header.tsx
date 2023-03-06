@@ -63,14 +63,7 @@ function header() {
             }   w-full lg:inline-flex lg:flex-grow lg:w-auto md:pt-0 mt-4 bg-zinc-300 md:bg-zinc-50 p-4 rounded-xl `}
             >
                 <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto pt-2'>
-                    <Link href="https://docs.eduscan.xyz"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <h1 className="font-medium text-black hover:text-purple-700 transition-in duration-500 ease-out 
-                      border-b-2 border-transparent hover:border-purple-700 px-3 mr-6 mb-3 md:mb-0">
-                        Docs
-                        </h1>
-                    </Link>
+                    
                     <Link href="/leadership">
                         <h1 className="font-medium text-black hover:text-purple-700 transition-in duration-500 ease-out 
                       border-b-2 border-transparent hover:border-purple-700 px-3 mr-6 mb-3 md:mb-0">
