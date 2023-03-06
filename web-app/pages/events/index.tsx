@@ -9,7 +9,7 @@ import groq from 'groq'
 import { getClient } from "../../lib/sanity.server"
 import Link from 'next/link';
 
-const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
+const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, previous }) => {
 
 
   return (
@@ -27,16 +27,17 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
              
               <div id="events" className="flex flex-col gap-5">
 
+              <h2 className="text-purple-700 font-bold text-2xl">Upcoming Events</h2>
+                
+                <Events posts={upcoming}/>
 
-              <h1 className="text-purple-700 font-bold text-xl py-10 md:text-4xl  ">
-                    Upcoming Events
-                </h1>
-            
-                  <Events posts={posts}/>
+                
+                <h2 className="text-purple-700 font-bold text-2xl">Previous Events</h2>
+          
+                <Events posts={previous}/>
 
               </div>
 
-              
               <Footer/>
               
             </div>
@@ -48,8 +49,26 @@ const Home: NextPage<{ posts: any[] }> = ({ posts }) => {
   )
 }
 export const getStaticProps = async ({ preview = false}) => {
-  const posts = await getClient(preview).fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+  const upcoming = await getClient(preview).fetch(groq`
+    *[_type == "post" && endDate > now()] | order(startDate asc) {
+     _id,
+     title,
+     host,
+     location,
+     link,
+     startDate,endDate,
+     "username": author->username,
+     "categories": categories[]->{id, title},
+     "authorImage": author->avatar,
+     blurb,
+     body,
+     mainImage,
+     slug,
+     publishedAt
+     }`)
+     
+  const previous = await getClient(preview).fetch(groq`
+    *[_type == "post" && endDate < now()] | order(startDate asc) {
      _id,
      title,
      host,
@@ -67,10 +86,10 @@ export const getStaticProps = async ({ preview = false}) => {
      }`)
   return {
     props: {
-      posts,
+      upcoming,
+      previous,
     },
   }
 }
-
 
 export default Home;

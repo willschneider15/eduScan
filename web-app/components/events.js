@@ -10,7 +10,7 @@ const events = ({ posts }) => {
   // console.log(posts)
   
   return(
-    <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
+    <div key={posts.id} className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
 
             <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
             {posts?.map((post) => (
