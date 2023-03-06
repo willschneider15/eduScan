@@ -9,21 +9,21 @@ import groq from 'groq'
 import { getClient } from "../../lib/sanity.server"
 import Link from 'next/link';
 
-const Event: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, previous }) => {
+const xNFT: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, previous }) => {
 
 
   return (
     <>
 
-      <div className='bg-zinc-50 px-10'>
+      <div className='bg-zinc-50 px-10 py-20'>
             <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
                   
               <Head>
-                <title> eduScan | Events </title>
+                <title> eduScan | xNFT </title>
                 <link rel="icon" href="/eduScan.png" />
               </Head>
             
-              <Header/>
+
              
               <div id="events" className="flex flex-col gap-5">
 
@@ -38,7 +38,7 @@ const Event: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pr
 
               </div>
 
-              <Footer/>
+
               
             </div>
             
@@ -92,4 +92,4 @@ export const getStaticProps = async ({ preview = false}) => {
   }
 }
 
-export default Event;
+export default xNFT;
