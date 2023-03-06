@@ -18,22 +18,27 @@ export function HomeScreen() {
   ];
 
   return (
-    <Screen>
-      {/* <Text style={tw`mb-4`}>
-        You'll find several examples of how to build xNFTs using react-native:
-      </Text>
-      <FlatList
-        data={features}
-        keyExtractor={(item) => item}
-        renderItem={({ item }) => <Text>- {item}</Text>}
-      /> */}
-      <WebView 
-        // originWhitelist={['*']} 
-        source={{ uri: 'https://www.eduscan.xyz/events/' }} 
-        style={{ marginTop: 20 }}
-        /> 
+    <> 
+      <iframe src='https://www.eduscan.xyz/xnft/' 
+    height="100%"/>
+    </>
+
+    // <Screen>
+    //   {/* <Text style={tw`mb-4`}>
+    //     You'll find several examples of how to build xNFTs using react-native:
+    //   </Text>
+    //   <FlatList
+    //     data={features}
+    //     keyExtractor={(item) => item}
+    //     renderItem={({ item }) => <Text>- {item}</Text>}
+    //   /> */}
+    //   {/* <WebView 
+    //     // originWhitelist={['*']} 
+    //     source={{ uri: 'https://www.eduscan.xyz/events/' }} 
+    //     style={{ marginTop: 20 }}
+    //     />  */}
         
-      {/* <iframe src='https://www.eduscan.xyz/events/' /> */}
-    </Screen>
+     
+    // </Screen>
   );
 }
