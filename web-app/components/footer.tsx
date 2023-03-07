@@ -11,8 +11,15 @@ function footer() {
                 <div className="mr-12 lg:block">
                     
                     <p>Built by Solteria</p>
-                    <p>v1.1.0</p>
-                    
+                    <p>v1.2.0</p>
+                    <Link href="https://docs.eduscan.xyz"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <h1 className="font-medium text-black hover:text-purple-700 transition-in duration-500 ease-out 
+                      border-transparent hover:border-purple-700 ">
+                        Docs
+                        </h1>
+                    </Link>
                 </div> 
 
                 <div className="flex justify-center">
