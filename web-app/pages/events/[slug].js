@@ -32,7 +32,7 @@ const Post = ({post}) => {
         return <div>Loading...</div>;
     }
 
-    const {title, host, mainImage, location, link, categories, blurb, body, authorImage, username, about, startDate, endDate} = post
+    var {title, host, mainImage, location, link, categories, blurb, body, authorImage, username, about, startDate, endDate} = post
 
     
     const formattedStartDate = new Date(startDate).toLocaleString('en-US', {
@@ -53,13 +53,14 @@ const Post = ({post}) => {
     });
 
     const eventDate = startDate;
-
+    title = title.replace(/<\!--.*?-->/g, "");
+    
     return (
         <div className='bg-zinc-50 px-10'>
             
             <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
 
-                <Head>
+             <Head>
                 <title> eduScan |  {title} </title>
                 <link rel="icon" href="/eduScan.png" />
               </Head>
