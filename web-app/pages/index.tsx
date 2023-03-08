@@ -73,7 +73,8 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
     
   )
 }
-export const getStaticProps = async ({ preview = false}) => {
+export const getStaticProps = async ({ preview = false }) => {
+
   const upcoming = await getClient(preview).fetch(groq`
     *[_type == "post" && endDate > now()] | order(startDate asc) {
      _id,
@@ -114,6 +115,7 @@ export const getStaticProps = async ({ preview = false}) => {
       upcoming,
       previous,
     },
+    revalidate: 10,
   }
 }
 
