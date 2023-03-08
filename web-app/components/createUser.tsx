@@ -2,7 +2,8 @@ import React from 'react';
 import styles from '../styles/Home.module.css'
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { useCreateUser, SDK } from '@gumhq/react-sdk';
+import { SDK } from '@gumhq/react-sdk';
+import { useCreateUser} from "../hooks/useCreateUsers"
 
 interface Props {
   sdk: SDK;
@@ -19,7 +20,7 @@ export const handleCreateUser = async (
 
 const CreateUser = ({sdk}: Props) => {
   const wallet = useWallet();
-  const { create, userPDA, loading, error} = useCreateUser(sdk);
+  const { create, userPDA} = useCreateUser(sdk);
 
   return (
     <div>

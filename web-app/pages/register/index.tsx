@@ -30,11 +30,11 @@ export default function Home() {
     if (!wallet.connected) return;
     if (!sdk) return;
     const getData = async () => {
-        const profileMetadataList = await sdk.profileMetadata.getProfileMetadataAccountsByUser(userPublicKey);
-        setUsersList(await sdk.user.getUserAccountsByUser(userPublicKey));
-        setProfilesList(await sdk.profile.getProfileAccountsByUser(userPublicKey));
+        const profileMetadataList = await sdk.profileMetadata.getProfileMetadataByUser;
+        setUsersList(await sdk.user.getUserAccountsByAuthority(userPublicKey));
+        setProfilesList(await sdk.profile.getProfilesByUser(userPublicKey));
         setProfileMetadataList(profileMetadataList as any);
-        setPostsList( await sdk.post.getPostAccountsByUser(userPublicKey));
+        setPostsList( await sdk.post.getPostsByUser(userPublicKey));
     };
     getData();
   }, [wallet.connected]);

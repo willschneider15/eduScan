@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react'; 
-import { SDK, useCreateProfile } from '@gumhq/react-sdk';
+import { SDK } from '@gumhq/react-sdk';
+import { useCreateProfile } from "../hooks/useCreateProfile"
 
 type Namespace = "Professional" | "Personal" | "Gaming" | "Degen";
 
@@ -28,12 +29,12 @@ const CreateProfile = ({sdk}: Props) => {
   const [usersList, setUsersList] = useState([]);
   const [selectedNamespaceOption, setSelectedNamespaceOption] = useState("Personal") as [Namespace, any];
   const [selectedUserOption, setSelectedUserOption] = useState("");
-  const { create, profilePDA, error, loading } = useCreateProfile(sdk);
+  const { create, profilePDA} = useCreateProfile(sdk);
 
   useEffect(() => {
     if (!wallet.connected) return;
     const init = async () => {
-      const users = await sdk.user.getUserAccountsByUser(userPublicKey) as any;
+      const users = await sdk.user.getUserAccountsByAuthority(userPublicKey) as any;
       const usersList = users.map((user: any) => user.publicKey.toBase58());
       setUsersList(usersList);
       if (usersList.length > 0) {

@@ -23,7 +23,7 @@ const CreatePost = ({ sdk }: Props) => {
 
   useEffect(() => {
     if (!wallet.connected) return;
-    sdk.profile.getProfileAccountsByUser(wallet.publicKey as PublicKey)
+    sdk.profile.getProfilesByUser(wallet.publicKey as PublicKey)
       .then((accounts) => {
         if (!accounts) return;
         const profileOptions = accounts.map((account) => {

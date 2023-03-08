@@ -34,14 +34,14 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                 <h2 className="text-black pt-3 font-medium">
                   powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
                 </h2>
-                <div className="">
+                <div className="py-10">
 
 
-                {/* <Link className="rounded-none px-7 font-bold bg-gradient-to-r from-purple-300 to-teal-400 pb-4"
+                <Link className="rounded-none px-7 pb-4"
                   href="/register"
                   >  
                   Enter App
-                </Link> */}
+                </Link> 
                 </div>
 
               </main>
@@ -56,7 +56,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                   <Events posts={upcoming}/>
 
                   
-                  <h2 className="text-purple-700 font-bold text-2xl">Previous Events</h2>
+                  <h2 className="text-purple-700 font-bold text-2xl pt-10">Previous Events</h2>
             
                   <Events posts={previous}/>
 

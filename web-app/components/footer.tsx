@@ -11,7 +11,7 @@ function footer() {
                 <div className="mr-12 lg:block">
                     
                     <p>Built by Solteria</p>
-                    <p>v1.1.0</p>
+                    <p>v1.2.0</p>
                     <Link href="https://docs.eduscan.xyz"
                     target="_blank"
                     rel="noopener noreferrer">

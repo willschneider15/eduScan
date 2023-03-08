@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     
       const CAL: ProfileMetadata = {
         name: "Byung",
-        bio: "Blockchain Club President @ Ohio State University",
+        bio: "Blockchain Club President @ Cal Poly Pomona",
         username: "byungcool",
         following: 5,
         followers: 500,
