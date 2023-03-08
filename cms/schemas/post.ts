@@ -72,6 +72,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required().error('Please select an image'),
     }),
     defineField({
       name: 'categories',
@@ -84,6 +85,7 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: (Rule) => Rule.required().error('Please choose a publish date'),
     }),
 
     defineField({
