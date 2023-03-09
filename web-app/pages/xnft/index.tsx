@@ -15,7 +15,7 @@ const xNFT: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
   return (
     <>
 
-      <div className='bg-zinc-50 px-10 py-20'>
+      <div className='bg-zinc-50 px-10 py-4'>
             <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
                   
               <Head>
