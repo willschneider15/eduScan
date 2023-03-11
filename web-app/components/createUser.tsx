@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { SDK } from '@gumhq/react-sdk';
-import { useCreateUser} from "../hooks/useCreateUsers"
+import { useCreateUser} from "../hooks/useCreateUsers";
 
 interface Props {
   sdk: SDK;

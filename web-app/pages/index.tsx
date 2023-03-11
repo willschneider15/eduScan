@@ -40,7 +40,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                 <Link className="rounded-none px-7 pb-4"
                   href="/register"
                   >  
-                  Enter App
+                  Register Here
                 </Link> 
                 </div>
 

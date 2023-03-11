@@ -4,6 +4,10 @@ import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react'; 
 import { SDK } from '@gumhq/react-sdk';
 import { useCreateProfile } from "../hooks/useCreateProfile"
+import { gql, request } from "graphql-request";
+
+
+
 
 type Namespace = "Professional" | "Personal" | "Gaming" | "Degen";
 
@@ -26,24 +30,25 @@ const CreateProfile = ({sdk}: Props) => {
   const wallet = useWallet();
   const userPublicKey = wallet.publicKey as PublicKey;
   const [metadataUri, setMetadataUri] = useState('');
-  const [usersList, setUsersList] = useState([]);
+  const [usersList, setUsersList] = useState<any[]>([]);
   const [selectedNamespaceOption, setSelectedNamespaceOption] = useState("Personal") as [Namespace, any];
   const [selectedUserOption, setSelectedUserOption] = useState("");
   const { create, profilePDA} = useCreateProfile(sdk);
 
+  
   useEffect(() => {
     if (!wallet.connected) return;
     const init = async () => {
-      const users = await sdk.user.getUserAccountsByAuthority(userPublicKey) as any;
-      const usersList = users.map((user: any) => user.publicKey.toBase58());
+      const users = await sdk.user.getUserAccountsByAuthority(userPublicKey);
+      const usersList = users.map((user: any) => user.cl_pubkey);
       setUsersList(usersList);
       if (usersList.length > 0) {
-        setSelectedUserOption(usersList[0]);
+      setSelectedUserOption(usersList[0]);
       }
     };
     init();
   }, [wallet.connected]);
-
+  
   return (
     <div>
       <h1 className={`${styles.title}`}>Create New Profile</h1>

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css';
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { useCreatePost, SDK } from '@gumhq/react-sdk';
+import { SDK } from '@gumhq/react-sdk';
+import { useCreatePost } from '../hooks/useCreatePost';
 
 interface Props {
   sdk: SDK;
@@ -19,7 +20,7 @@ const CreatePost = ({ sdk }: Props) => {
   const [metadataUri, setMetadataUri] = useState('');
   const [userProfileAccounts, setUserProfileAccounts] = useState<any>([]);
   const [selectedProfileOption, setSelectedProfileOption] = useState<any>(null);
-  const { create, postPDA, error, loading } = useCreatePost(sdk);
+  const { create, postPDA } = useCreatePost(sdk);
 
   useEffect(() => {
     if (!wallet.connected) return;
@@ -28,8 +29,8 @@ const CreatePost = ({ sdk }: Props) => {
         if (!accounts) return;
         const profileOptions = accounts.map((account) => {
           return {
-            profilePDA: account.publicKey.toBase58(),
-            userPDA: account.account.user.toBase58(),
+            profilePDA: account.cl_pubkey,
+            userPDA: account.username,
           }
         });
         setUserProfileAccounts(profileOptions);

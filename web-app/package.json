@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@gumhq/react-sdk": "^1.0.7",
+    "@gumhq/react-sdk": "^1.0.9",
     "@gumhq/ui-components": "^2.0.4",
     "@next/font": "^13.1.6",
     "@nextui-org/react": "^1.0.0-beta.12",
@@ -22,6 +22,7 @@
     "next-sanity-image": "^5.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
     "react-scroll": "^1.8.9"
   },
   "devDependencies": {

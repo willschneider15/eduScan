@@ -2,7 +2,7 @@ import { AnchorWallet, useAnchorWallet } from "@solana/wallet-adapter-react";
 import { Cluster, ConfirmOptions, Connection } from "@solana/web3.js";
 import { SDK } from "@gumhq/sdk";
 import { GraphQLClient } from "graphql-request";
-import { useGum } from "@gumhq/react-sdk";
+
 
 
 
