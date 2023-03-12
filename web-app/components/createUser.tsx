@@ -26,7 +26,7 @@ const CreateUser = ({sdk}: Props) => {
     <div>
       <h1 className={`${styles.title}`}>Create New User</h1>
       <button
-        className={`${styles.button}`}
+        className="bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border rounded-xl py-4 px-10"
         onClick={(event) => {
           event.preventDefault();
           create(wallet.publicKey as PublicKey);

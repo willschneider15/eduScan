@@ -90,7 +90,7 @@ const CreateProfile = ({sdk}: Props) => {
         </select>
       </div>
       <button
-        className={`${styles.button}`}
+        className="bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border rounded-xl py-4 px-10"
         onClick={async (event) => {
           event.preventDefault();
           create(metadataUri, selectedNamespaceOption, new PublicKey(selectedUserOption), userPublicKey);

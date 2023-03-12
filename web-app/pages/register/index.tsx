@@ -49,31 +49,39 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className="">
         { sdk && (
-            <div className={styles.leftContainer}>
-                <div className={styles.walletButtons}>
-                    <WalletMultiButtonDynamic />
-                </div>
-                <div>
-                <Link className="" 
-                href="/leadership">
-                    Go to Profile
-                </Link>
+            <div className="flex flex-col">
+                <div className='flex m-auto flex-row gap-x-8 pt-10'>
+              
+                   
+                    <Link className="mt-5" 
+                    href="/social">
+                        Go Back
+                    </Link>
+                    <div className="">
+                        <WalletMultiButtonDynamic />
+                    </div>
 
-            </div>
-                <div className={styles.componentContainer}>
+                </div>
+               
+            <div>
+            <div className={styles.componentContainer}>
                     <CreateUser sdk={sdk} />
                 </div>
                 <div className={styles.componentContainer}>
                     <CreateProfile sdk={sdk} />
                 </div>
+
+            </div>
+          
+          
                 {/* <div className={styles.componentContainer}>
                     <CreatePost sdk={sdk} />
                 </div> */}
             </div>
         )}
-        <div className={styles.rightContainer}>
+        <div className="mx-40 mb-20">
             <div className={styles.listContainer}>
                 <h2 className={styles.title}>Your User Accounts</h2>
                     {usersList.map((user, index) => (

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Link as ScrollLink} from 'react-scroll';
+import Link from 'next/link';
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import { Profile, ProfileMetadata } from '@gumhq/ui-components';
@@ -84,22 +84,37 @@ const Home: NextPage = () => {
               </Head>
             
               <Header/>
-             <div className='m-auto flex-col space-y-2'>
+             <div className='m-auto flex flex-col space-y-2'>
                 <div className='flex space-x-2 pb-10 '>
                     <img src='./gum.svg'/>
                     <h1 className="text-purple-700 font-bold text-xl text-center  md:text-4xl m-auto">
-                     Your Profile
+                     Social Profiles
                     </h1>
                 </div>
                 
-                <div className='m-auto '>
-                  {wallet.connected ? (
-                    <Profile data={yourProfile}/>
-                  ) : (
-                    <h2> Please Connect Your Wallet </h2>
-                  )}  
+                <div className='m-auto pb-20'>
+  
+                  {!wallet.connected ? 
+                      <h2 className=' font-bold text-xl text-center h-auto m-auto rounded-xl py-8 '>
+                       Please Connect Your Wallet!
+                      </h2>
+                      : (yourProfile.name 
+                        ? <Profile data={yourProfile}/>
+                        :                 
+                        <Link className="bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border rounded-xl py-4 px-10 "
+                        href="/register"
+                        >  
+                      Register Here
+                    </Link> )}
                 </div>
+
+               
              </div>
+             <div
+                className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-200">
+                  <h1><b>Disclaimer: </b> Our social graph features are invite only, and in active development. Contact us on Discord for potential access to test. </h1>
+                </div>
               <Footer/>
             </div>
           </div>
