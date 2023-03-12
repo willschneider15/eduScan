@@ -54,12 +54,12 @@ const Home: NextPage = () => {
 
 
   const yourProfile: ProfileMetadata = metadataContentList.length > 0 ? {
-    name: metadataContentList[1].name,
-    bio: metadataContentList[1].bio,
-    username: metadataContentList[1].username,
+    name: metadataContentList[0].name,
+    bio: metadataContentList[0].bio,
+    username: metadataContentList[0].username,
     following: 0,
     followers: 0,
-    avatar: metadataContentList[1].avatar
+    avatar: metadataContentList[0].avatar
     // connect: followData // Optional
   } : {
     name: "",

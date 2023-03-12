@@ -67,7 +67,7 @@ function header() {
                     <Link href="/leadership">
                         <h1 className="font-medium text-black hover:text-purple-700 transition-in duration-500 ease-out 
                       border-b-2 border-transparent hover:border-purple-700 px-3 mr-6 mb-3 md:mb-0">
-                            Leadership
+                            Social
                         </h1>
                     </Link>
                     <Link href="https://medium.com/@eduScan.xyz/introducing-eduscan-blockchain-networking-for-higher-education-e58d05ddd35b"
