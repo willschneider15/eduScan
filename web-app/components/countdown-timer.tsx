@@ -46,22 +46,22 @@ function CountDownTimer({date}: {date: string}) {
         <>
           <div className=" m-auto bg-white rounded-xl py-10  border shadow-xl">
             <div className="grid grid-cols-4 ">
-              <div className="text-center">
+              <div className="text-center flex flex-col md:flex-row md:gap-x-1 items-center justify-center">
                 <span className="text-center">{days}</span>
                 <span className="text-center"> Days</span>
               </div>
               
-              <div className="text-center">
+              <div className="text-center flex flex-col md:flex-row  md:flex-row md:gap-x-1 items-center justify-center">
                 <span className="text-center">{hours}</span>
                 <span className="text-center"> Hours</span>
               </div>
               
-              <div className="text-center">
+              <div className="text-center flex flex-col md:flex-row  md:flex-row md:gap-x-1 items-center justify-center">
                 <span className="text-center">{minutes}</span>
                 <span className="text-center"> Minutes</span>
               </div>
             
-              <div className="text-center">
+              <div className="text-center flex flex-col md:flex-row  md:flex-row md:gap-x-1 items-center justify-center">
                 <span className="text-center">{seconds}</span>
                 <span className="text-center"> Seconds</span>
               </div>
