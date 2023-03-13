@@ -30,7 +30,7 @@ const Post = ({post}) => {
 
     if (!post) {
         
-        return (<div>Loading...</div>)
+        return <div>Loading...</div>;
     }
 
     const {title, host, mainImage, location, link, categories, blurb, body, authorImage, username, about, startDate, endDate} = post
