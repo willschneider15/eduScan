@@ -8,6 +8,9 @@ import CreatePost from '../../components/createPost';
 import CreateProfile from '../../components/createProfile';
 import CreateUser from '../../components/createUser';
 import { useGumSDK } from '../../hooks/useGumSDK';
+import Link from 'next/link';
+
+
 
 const WalletMultiButtonDynamic = dynamic(
     async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
@@ -30,11 +33,10 @@ export default function Home() {
     if (!wallet.connected) return;
     if (!sdk) return;
     const getData = async () => {
-        const profileMetadataList = await sdk.profileMetadata.getProfileMetadataAccountsByUser(userPublicKey);
-        setUsersList(await sdk.user.getUserAccountsByUser(userPublicKey));
-        setProfilesList(await sdk.profile.getProfileAccountsByUser(userPublicKey));
-        setProfileMetadataList(profileMetadataList as any);
-        setPostsList( await sdk.post.getPostAccountsByUser(userPublicKey));
+        setUsersList(await sdk.user.getUserAccountsByAuthority(userPublicKey));
+        setProfilesList(await sdk.profile.getProfilesByUser(userPublicKey));
+        setProfileMetadataList(await sdk.profileMetadata.getProfileMetadataByUser(userPublicKey));
+        setPostsList( await sdk.post.getPostsByUser(userPublicKey));
     };
     getData();
   }, [wallet.connected]);
@@ -47,24 +49,39 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className="">
         { sdk && (
-            <div className={styles.leftContainer}>
-                <div className={styles.walletButtons}>
-                    <WalletMultiButtonDynamic />
+            <div className="flex flex-col">
+                <div className='flex m-auto flex-row gap-x-8 pt-10'>
+              
+                   
+                    <Link className="mt-5" 
+                    href="/social">
+                        Go Back
+                    </Link>
+                    <div className="bg-purple-700 text-white rounded-xl font-medium">
+                        <WalletMultiButtonDynamic />
+                    </div>
+
                 </div>
-                <div className={styles.componentContainer}>
+               
+            <div>
+            <div className={styles.componentContainer}>
                     <CreateUser sdk={sdk} />
                 </div>
                 <div className={styles.componentContainer}>
                     <CreateProfile sdk={sdk} />
                 </div>
-                <div className={styles.componentContainer}>
+
+            </div>
+          
+          
+                {/* <div className={styles.componentContainer}>
                     <CreatePost sdk={sdk} />
-                </div>
+                </div> */}
             </div>
         )}
-        <div className={styles.rightContainer}>
+        <div className="mx-40 mb-20">
             <div className={styles.listContainer}>
                 <h2 className={styles.title}>Your User Accounts</h2>
                     {usersList.map((user, index) => (
@@ -73,43 +90,44 @@ export default function Home() {
                                 {index + 1}
                             </div>
                             <div className={styles.userInfo}>
-                                <p className={styles.userEmail}>User Account: {user.publicKey.toBase58()}</p>
-                                <p className={styles.userAuthority}>Authority: {user.account.authority.toBase58()}</p>
+                                <p className={styles.userEmail}>User Account: {user.cl_pubkey}</p>
+                                <p className={styles.userAuthority}>Authority: {user.authority}</p>
                             </div>
                         </div>
                     ))}
             </div>
             <div className={styles.listContainer}>
             <h2 className={styles.title}>Your Profile Accounts</h2>
-                {profilesList.map((user, index) => (
+                {profilesList.map((profile, index) => (
                     <div key={index} className={styles.userCard}>
                         <div className={styles.userNumber}>
                             {index + 1}
                         </div>
                         <div className={styles.userInfo}>
-                            <p className={styles.userEmail}>Profile Account: {user.publicKey.toBase58()}</p>
-                            <p className={styles.userAuthority}>User Account: {user.account.user.toBase58()}</p>
-                            <p className={styles.userAuthority}>Namespace: {JSON.stringify(user.account.namespace)}</p>
+                            <p className={styles.userEmail}>Profile Account: {profile.cl_pubkey}</p>
+                            <p className={styles.userAuthority}>User Account: {profile.username}</p>
+                            <p className={styles.userAuthority}>Namespace: {profile.namespace}</p>
                         </div>
                     </div>
                 ))}
             </div>
             <div className={styles.listContainer}>
                 <h2 className={styles.title}>Your Profile Metadata Accounts</h2>
-                {profileMetadataList.map((user, index) => (
+                {profileMetadataList.map((profileContent, index) => (
                     <div key={index} className={styles.userCard}>
                         <div className={styles.userNumber}>
                             {index + 1}
                         </div>
                         <div className={styles.userInfo}>
-                            <p className={styles.userEmail}>Profile Metadata Account: {user[0].publicKey.toBase58()}</p>
-                            <p className={styles.userAuthority}>Profile Account: {user[0].account.profile.toBase58()}</p>
-                            <p className={styles.userAuthority}>MetadataUri: {JSON.stringify(user[0].account.metadataUri)}</p>
+                            <p className={styles.userEmail}>Profile Metadata Account: {profileContent.cl_pubkey}</p>
+                            <p className={styles.userAuthority}>Profile Account: {profileContent.profile}</p>
+                            <p className={styles.userAuthority}>MetadataUri: {profileContent.metadatauri}</p>
                         </div>
                     </div>
                 ))}
             </div>
-            <div className={styles.listContainer}>
+
+            {/* <div className={styles.listContainer}>
                 <h2 className={styles.title}>Your Post Accounts</h2>
                 {postsList.map((user, index) => (
                     <div key={index} className={styles.userCard}>
@@ -123,7 +141,7 @@ export default function Home() {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div> */}
         </div>
       </main>
     </>

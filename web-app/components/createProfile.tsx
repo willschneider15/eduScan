@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react'; 
-import { SDK, useCreateProfile } from '@gumhq/react-sdk';
+import { SDK } from '@gumhq/react-sdk';
+import { useCreateProfile } from "../hooks/useCreateProfile"
+import { gql, request } from "graphql-request";
+
+
+
 
 type Namespace = "Professional" | "Personal" | "Gaming" | "Degen";
 
@@ -25,24 +30,25 @@ const CreateProfile = ({sdk}: Props) => {
   const wallet = useWallet();
   const userPublicKey = wallet.publicKey as PublicKey;
   const [metadataUri, setMetadataUri] = useState('');
-  const [usersList, setUsersList] = useState([]);
+  const [usersList, setUsersList] = useState<any[]>([]);
   const [selectedNamespaceOption, setSelectedNamespaceOption] = useState("Personal") as [Namespace, any];
   const [selectedUserOption, setSelectedUserOption] = useState("");
-  const { create, profilePDA, error, loading } = useCreateProfile(sdk);
+  const { create, profilePDA} = useCreateProfile(sdk);
 
+  
   useEffect(() => {
     if (!wallet.connected) return;
     const init = async () => {
-      const users = await sdk.user.getUserAccountsByUser(userPublicKey) as any;
-      const usersList = users.map((user: any) => user.publicKey.toBase58());
+      const users = await sdk.user.getUserAccountsByAuthority(userPublicKey);
+      const usersList = users.map((user: any) => user.cl_pubkey);
       setUsersList(usersList);
       if (usersList.length > 0) {
-        setSelectedUserOption(usersList[0]);
+      setSelectedUserOption(usersList[0]);
       }
     };
     init();
   }, [wallet.connected]);
-
+  
   return (
     <div>
       <h1 className={`${styles.title}`}>Create New Profile</h1>
@@ -84,7 +90,7 @@ const CreateProfile = ({sdk}: Props) => {
         </select>
       </div>
       <button
-        className={`${styles.button}`}
+        className="bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border rounded-xl py-4 px-10"
         onClick={async (event) => {
           event.preventDefault();
           create(metadataUri, selectedNamespaceOption, new PublicKey(selectedUserOption), userPublicKey);

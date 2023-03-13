@@ -2,7 +2,8 @@ import React from 'react';
 import styles from '../styles/Home.module.css'
 import { PublicKey } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { useCreateUser, SDK } from '@gumhq/react-sdk';
+import { SDK } from '@gumhq/react-sdk';
+import { useCreateUser} from "../hooks/useCreateUsers";
 
 interface Props {
   sdk: SDK;
@@ -19,13 +20,13 @@ export const handleCreateUser = async (
 
 const CreateUser = ({sdk}: Props) => {
   const wallet = useWallet();
-  const { create, userPDA, loading, error} = useCreateUser(sdk);
+  const { create, userPDA} = useCreateUser(sdk);
 
   return (
     <div>
       <h1 className={`${styles.title}`}>Create New User</h1>
       <button
-        className={`${styles.button}`}
+        className="bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border rounded-xl py-4 px-10"
         onClick={(event) => {
           event.preventDefault();
           create(wallet.publicKey as PublicKey);

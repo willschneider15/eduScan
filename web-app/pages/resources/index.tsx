@@ -1,116 +1,100 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
 
 
 const Resources: NextPage = () => {
 
     return (
         
-    <div className="font-mont bg-[#f0f0fb]">
+    <div className='bg-zinc-50 px-10'>
+        <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
 
       <Head>  
         <title> eduScan | Resources </title>
         <link rel="icon" href="/eduScan.png" />
       </Head>
-
-      <nav className="relative container mx-auto p-6">
-        <div className="flex items-center justify-between">
-
-        <a href="/">
-          <Image className="pt-1" src="/eduScan-no-bg.svg" alt="eduScan Logo" width={220} height={250}/>
-        </a>
-        {/*
-            header 
-        */}
-        <div className="hidden space-x-6 md:flex text-black">
-        {/*
-            needs to be refactored to use next/link 
-        */}
-          <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Jobs </a> 
-          <a href="/resources"className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Resources </a>
-          <a href=""className="hover:text-purple-700 font-bold text-xl bg-clip-text bg-black p-3"> Settings </a>
-        </div>
-        {/*
-            button 
-        */}
-        <a href="" className="hidden p-2 px-5 pt-3 text-white hover:font-bold bg-purple-700 rounded-[16px] baseline bg-gradient-to-r from-purple-700 to-teal-400 md:block"
-        >
-          Get Started
-        </a>
-      </div>
         
-    </nav>
+    <Header/>
 
-    <main className="flex flex-row w-full flex-1 items-center justify-center px-20 text-center my-60">
+
+    <main className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
+
+   
         
-        <div className="w-full items-center justify-center">
-        <h2 className="text-purple-700 font-bold text-3xl mb-10">
-        Documents
+    <div className="grid grid-cols-1 items-center justify-around  rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center hover:bg-purple-300 hover:translate-x-2 hover:translate-y-2 transition-all duration-300 group">
+
+        <h2 className="text-purple-700 font-bold text-3xl mb-10 group-hover:text-black">
+            Documentations 📚
         </h2>
 
         <ul id="documents" className="text-black">
-        
-        <li className="my-4 text-xl">
+            
+            <li className="my-4 text-xl">
+                <a
+                className="hover:text-white"
+                href="https://spl.solana.com/"
+                target="_blank"
+                rel="noopener noreferrer"> 
+                Introduction to Solana Program Library </a>
+            </li>
+
+            <li className="my-4 text-xl">
+                <a
+                className="hover:text-white"
+                href="https://doc.rust-lang.org/book/title-page.html"
+                target="_blank"
+                rel="noopener noreferrer"> 
+                The Rust Programming Language </a>
+            </li>
+
+            <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
-            href="https://spl.solana.com/"
-            target="_blank"
-            rel="noopener noreferrer"> 
-            Introduction to Solana Program Library </a>
-        </li>
+                className="hover:text-white"
+                href="https://www.anchor-lang.com/"
+                target="_blank"
+                rel="noopener noreferrer"> 
+                Introduction to the Anchor Framework </a>
+            </li>
 
-        <li className="my-4 text-xl">
+            <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
-            href="https://doc.rust-lang.org/book/title-page.html"
-            target="_blank"
-            rel="noopener noreferrer"> 
-            The Rust Programming Language </a>
-        </li>
+                className="hover:text-white"
+                href="https://solanacookbook.com/"
+                target="_blank"
+                rel="noopener noreferrer"> 
+                The Solana Cookbook </a>
+            </li>
 
-        <li className="my-4 text-xl">
-        <a
-            className="hover:text-purple-700"
-            href="https://www.anchor-lang.com/"
-            target="_blank"
-            rel="noopener noreferrer"> 
-            Introduction to the Anchor Framework </a>
-        </li>
+            <li className="my-4 text-xl">
+            <a
+                className="hover:text-white"
+                href="https://docs.xnfts.dev/getting-started/getting-started"
+                target="_blank"
+                rel="noopener noreferrer"> 
+                Build your first xNFT </a>
+            </li>
 
-        <li className="my-4 text-xl">
-        <a
-            className="hover:text-purple-700"
-            href="https://solanacookbook.com/"
-            target="_blank"
-            rel="noopener noreferrer"> 
-            The Solana Cookbook </a>
-        </li>
-
-        <li className="my-4 text-xl">
-        <a
-            className="hover:text-purple-700"
-            href="https://docs.xnfts.dev/getting-started/getting-started"
-            target="_blank"
-            rel="noopener noreferrer"> 
-            Building your first xNFT </a>
-        </li>
-
-                
+                    
         </ul>
 
-        </div>
+    </div>
 
-        <div className="w-full items-center justify-center">
-        <h2 className="text-purple-700 font-bold text-3xl mb-10">
-            Videos
+        <div className="grid grid-cols-1 items-center justify-around  rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center hover:bg-purple-300 hover:translate-x-2 hover:translate-y-2 transition-all duration-300 group">
+        
+        <h2 className="text-purple-700 font-bold text-3xl mb-10 group-hover:text-black">
+            Videos 📹
         </h2>
 
         <ul id="videos" className="text-black">
 
         <li className="my-4 text-xl">        
         <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://www.youtube.com/watch?v=1jzROE6EhxM"
             target="_blank"
             rel="noopener noreferrer"> 
@@ -119,16 +103,16 @@ const Resources: NextPage = () => {
 
         <li className="my-4 text-xl">        
         <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://www.youtube.com/playlist?list=PLilwLeBwGuK4k6nrPXilUASArEF46LHOd"
             target="_blank"
             rel="noopener noreferrer"> 
-            Getting Started on Solana (3 videos)</a>
+            Getting Started on Solana | 3 Episodes</a>
         </li>
 
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://www.youtube.com/watch?v=pNzT3hgFbpg"
             target="_blank"
             rel="noopener noreferrer"> 
@@ -138,21 +122,21 @@ const Resources: NextPage = () => {
 
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://www.youtube.com/playlist?list=PLilwLeBwGuK4k6nrPXilUASArEF46LHOd"
             target="_blank"
             rel="noopener noreferrer"> 
-            Solana Bytes (12 videos)</a>
+            Solana Bytes | 12 Episodes</a>
 
         </li>
 
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://www.youtube.com/playlist?list=PLUBKxx7QjtVnU3hkPc8GF1Jh4DE7cf4n1"
             target="_blank"
             rel="noopener noreferrer"> 
-            Rust Solana Tutorial (10 videos)</a>
+            Rust Solana Tutorial | 10 Episodes</a>
 
         </li>
           
@@ -160,15 +144,77 @@ const Resources: NextPage = () => {
 
         </div>
 
-        <div className="w-full items-center justify-center">
-        <h2 className="text-purple-700 font-bold text-3xl mb-10">
-            Others
+        <div className="grid grid-cols-1 items-center justify-around  rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center hover:bg-purple-300 hover:translate-x-2 hover:translate-y-2 transition-all duration-300 group">
+        
+        <h2 className="text-purple-700 font-bold text-3xl mb-10 group-hover:text-black">
+            Podcasts 🎙️
+        </h2>
+
+        <ul id="videos" className="text-black">
+
+        <li className="my-4 text-xl">        
+        <a
+            className="hover:text-white"
+            href="https://www.youtube.com/playlist?list=PLilwLeBwGuK4H0t-tYR3C1KQFGmyZLNMG"
+            target="_blank"
+            rel="noopener noreferrer"> 
+            VALIDATED Podcast | 9 Episodes </a>
+        </li>
+
+        <li className="my-4 text-xl">        
+        <a
+            className="hover:text-white"
+            href="https://www.youtube.com/watch?v=ZyIxWutfZ-U&t=1360s"
+            target="_blank"
+            rel="noopener noreferrer"> 
+            Bankless Shows | Will Solana Make It With Anatoly Yakovenko</a>
+        </li>
+
+        <li className="my-4 text-xl">
+            <a
+            className="hover:text-white"
+            href="https://www.youtube.com/watch?v=ZyIxWutfZ-U&t=1360s"
+            target="_blank"
+            rel="noopener noreferrer"> 
+            NEAR Protocol | Sharding vs No Sharding Fireside Chat </a>
+
+        </li>
+
+        <li className="my-4 text-xl">
+            <a
+            className="hover:text-white"
+            href="https://youtu.be/L7JmgQNdCE8"
+            target="_blank"
+            rel="noopener noreferrer"> 
+            Coinbase | Building for the Future with Solana </a>
+
+        </li>
+
+        <li className="my-4 text-xl">
+            <a
+            className="hover:text-white"
+            href="https://youtu.be/rKGhbC6Uync"
+            target="_blank"
+            rel="noopener noreferrer"> 
+            NEAR Protocol | Whiteboard Series with NEAR </a>
+
+        </li>
+          
+        </ul>
+
+        </div>
+
+        <div className="grid grid-cols-1 items-center justify-around  rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center hover:bg-purple-300 hover:translate-x-2 hover:translate-y-2 transition-all duration-300 group">
+        <h2 className="text-purple-700 font-bold text-3xl group-hover:text-black">
+            More 🛸
         </h2>
 
         <ul id="others" className="text-black">
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://soldev.app/course"
             target="_blank"
             rel="noopener noreferrer"> 
@@ -178,7 +224,7 @@ const Resources: NextPage = () => {
 
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://beta.solpg.io/"
             target="_blank"
             rel="noopener noreferrer"> 
@@ -188,31 +234,21 @@ const Resources: NextPage = () => {
 
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://solana.stackexchange.com/"
             target="_blank"
             rel="noopener noreferrer"> 
-            Solana Stack Exchange (Stack Overflow for Solana) </a>
+            Solana Stack Exchange | Stack Overflow for Solana </a>
 
-        </li> 
-
-         <li className="my-4 text-xl">
-            <a
-            className="hover:text-purple-700"
-            href="https://docs.clockwork.xyz/about/readme"
-            target="_blank"
-            rel="noopener noreferrer"> 
-            Introduction to Clockwork (Smart Contract Automation) </a>
-
-        </li>   
+        </li>  
 
         <li className="my-4 text-xl">
             <a
-            className="hover:text-purple-700"
+            className="hover:text-white"
             href="https://docs.gum.fun/"
             target="_blank"
             rel="noopener noreferrer"> 
-            Build your own decentralized social media protocol on Solana </a>
+            Build a decentralized social media protocol | Gum </a>
 
         </li>
 
@@ -222,53 +258,11 @@ const Resources: NextPage = () => {
 
     </main>
 
-    <footer className="flex h-24 w-full items-center justify-between">
-
-        <div className="flex flex-col px-80">
-            <a
-            className="flex gap-2"
-            href="/"
-            >
-            <Image className="object-contain  " src="/eduscan_black.png" alt="eduScan Logo" width={150} height={100}/>
-            </a>
-
-
-        </div>
-
-        <div className="flex flex-row px-80 space-x-6">
-
-            <a
-            className="flex items-center justify-center gap-2 px-1"
-            href="https://twitter.com/eduscan_xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            <Image className="hover:scale-125" src="/twitter.png" alt="Twitter Logo" width={40} height={40} />
-            </a>
-
-            <a
-            className="flex items-center justify-center gap-2 px-1"
-            href="https://discord.gg/U4gbtPU5"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            <Image className="hover:scale-125" src="/discord.png" alt="Discord Logo" width={40} height={40} />
-            </a>
-
-            <a
-            className="flex items-center justify-center gap-2 px-1"
-            href="https://medium.com/@eduScan.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            <Image className="hover:scale-125" src="/medium.png" alt="Medium Logo" width={40} height={40} />
-            </a>
-
-        </div>
-
-    </footer>
+    <Footer/>
 
     </div>
+
+    </div> 
 
     );
 

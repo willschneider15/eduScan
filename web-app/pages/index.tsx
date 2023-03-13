@@ -34,15 +34,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                 <h2 className="text-black pt-3 font-medium">
                   powered by <img className="inline-block" src="/sol.png" alt="Solana Logo" width={150} height={150} />
                 </h2>
-                <div className="">
-
-
-                {/* <Link className="rounded-none px-7 font-bold bg-gradient-to-r from-purple-300 to-teal-400 pb-4"
-                  href="/register"
-                  >  
-                  Enter App
-                </Link> */}
-                </div>
+               
 
               </main>
 
@@ -60,6 +52,57 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
             
                   <Events posts={previous}/>
 
+                  
+
+              </div>
+
+              <div id="partners" className=''>
+                <h2 className="text-purple-700 font-bold text-2xl py-10">Partners</h2>
+                <div className='m-auto'>
+                  <div className='grid w-full grid-cols-2 gap-2 md:grid-cols-3 '>
+                  <div className="grid grid-cols-1 items-center  justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/spawn.svg'/>
+                    </div>
+                  <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-full md:w-1/2 m-auto" src='./partners/underdog.svg'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/backpack.svg'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./gum.svg'/>
+                    </div>
+
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-7/12 md:w-1/3 m-auto" src='./partners/ohio-state.webp'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/nyit.png'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-full md:w-1/2 m-auto" src='./partners/cpp.png'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/texas.png'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/michigan.webp'/>
+                    </div>
+                    
+                  </div>
+
+                </div>
+                
+                
               </div>
 
               
