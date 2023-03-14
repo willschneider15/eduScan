@@ -18,7 +18,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Solteria', // Usually your GitHub org/user name.
+  organizationName: 'eduScan', // Usually your GitHub org/user name.
   projectName: 'eduScan-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -42,8 +42,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/willschneider15/eduScan',
         },
         blog: false,
         theme: {
@@ -94,7 +92,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Solteria Labs`,
+        copyright: `Copyright © ${new Date().getFullYear()} eduScan Labs`,
       },
       prism: {
         theme: lightCodeTheme,

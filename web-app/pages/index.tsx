@@ -66,7 +66,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                     </div>
                   <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
-                      <img className="w-full md:w-1/2 m-auto" src='./partners/underdog.svg'/>
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/underdog.svg'/>
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
@@ -76,10 +76,9 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                 border p-6 shadow-xl text-center bg-purple-300">
                       <img className="w-5/6 md:w-1/2 m-auto" src='./gum.svg'/>
                     </div>
-
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
-                      <img className="w-7/12 md:w-1/3 m-auto" src='./partners/ohio-state.webp'/>
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/uba.png'/>
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
@@ -87,7 +86,11 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
-                      <img className="w-full md:w-1/2 m-auto" src='./partners/cpp.png'/>
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/cpp.png'/>
+                    </div>
+                    <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
+                border p-6 shadow-xl text-center bg-purple-300">
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/nyit.png'/>
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
