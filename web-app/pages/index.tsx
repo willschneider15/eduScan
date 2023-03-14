@@ -59,7 +59,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
               <div id="partners" className=''>
                 <h2 className="text-purple-700 font-bold text-2xl py-10">Partners</h2>
                 <div className='m-auto'>
-                  <div className='grid w-full grid-cols-2 gap-10 md:grid-cols-3 '>
+                  <div className='grid w-full grid-cols-2 gap-2 md:grid-cols-3 '>
                   <div className="grid grid-cols-1 items-center  justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
                       <img className="w-5/6 md:w-1/2 m-auto" src='./partners/spawn.svg'/>
@@ -70,11 +70,11 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
-                      <img className="w-5/6 md:w-1/2 m-auto" src='./gum.svg'/>
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/underdog.svg'/>
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
-                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/underdog.svg'/>
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./gum.svg'/>
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
@@ -82,7 +82,7 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
-                      <img className="w-7/12 md:w-1/3 m-auto" src='./partners/ohio-state.webp'/>
+                      <img className="w-5/6 md:w-1/2 m-auto" src='./partners/ohio-state.webp'/>
                     </div>
                     <div className="grid grid-cols-1 items-center justify-around gap-6 rounded-xl  py-8 px-8 
                 border p-6 shadow-xl text-center bg-purple-300">
@@ -107,7 +107,6 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                 
                 
               </div>
-
               
               <Footer/>
               
