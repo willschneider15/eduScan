@@ -99,7 +99,9 @@ const Home: NextPage = () => {
                        Please Connect Your Wallet!
                       </h2>
                       : (yourProfile.name 
-                        ? <Profile data={yourProfile}/>
+                        ? <div className='m-auto'>
+                            <Profile data={yourProfile}/>
+                          </div>
                         :                 
                         <Link className="bg-purple-700 text-white font-bold text-xl text-center h-auto m-auto border rounded-xl py-4 px-10 "
                         href="/register"

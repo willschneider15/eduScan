@@ -59,7 +59,7 @@ export default function Home() {
                     href="/social">
                         Go Back
                     </Link>
-                    <div className="">
+                    <div className="bg-purple-700 text-white rounded-xl font-medium">
                         <WalletMultiButtonDynamic />
                     </div>
 

@@ -26,9 +26,10 @@ const PostComponents = {
 
 const Post = ({post}) => {
 
-    console.log(post)
+
 
     if (!post) {
+        
         return <div>Loading...</div>;
     }
 
@@ -131,11 +132,12 @@ const Post = ({post}) => {
             
             <PortableText value={body} components={PostComponents}/>
 
-            <Card className='flex flex-col md:w-3/5 w-5/6 m-auto md:mx-0 flex-1   md:px-20 my-10 p-10'
+            <Card className='flex flex-col md:w-3/5 m-auto md:mx-0 flex-1   md:px-20 my-10 p-10'
             variant="bordered">
 
                     <User
                         className="pb-5"
+                
                         src={urlFor(authorImage).url()}
                         name={username}
                         alt={`${username} avatar`}
@@ -196,7 +198,8 @@ export const getStaticProps = async (
     return {
         props: {
             post,
-        }
+        },
+        revalidate: 10,
     }
 }
 
