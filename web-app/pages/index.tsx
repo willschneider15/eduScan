@@ -107,7 +107,6 @@ const Home: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pre
                 
                 
               </div>
-
               
               <Footer/>
               
