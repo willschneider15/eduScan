@@ -10,6 +10,8 @@ import { clusterApiUrl } from '@solana/web3.js';
 
 import { GumUIProvider } from '@gumhq/ui-components';
 
+
+
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -45,15 +47,26 @@ function MyApp({ Component, pageProps }: AppProps) {
        [network]
    );
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>
-          <GumUIProvider>
-            <Component {...pageProps} />
-          </GumUIProvider>
-        </WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>)
+    <>
+     <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=G-NET6M4F6FG`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        <ConnectionProvider endpoint={endpoint}>
+          <WalletProvider wallets={wallets} autoConnect>
+            <WalletModalProvider>
+              <GumUIProvider>
+                <Component {...pageProps} />
+              </GumUIProvider>
+            </WalletModalProvider>
+          </WalletProvider>
+        </ConnectionProvider>
+    </>
+  )
 }
 
 export default MyApp
