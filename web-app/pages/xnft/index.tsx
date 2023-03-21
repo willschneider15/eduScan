@@ -89,6 +89,7 @@ export const getStaticProps = async ({ preview = false}) => {
       upcoming,
       previous,
     },
+    revalidate: 10,
   }
 }
 
