@@ -15,3 +15,6 @@ yarn dev
 ```
 
 Open http://localhost:3000 with your browser to see the result. You can start editing the page by modifying src/pages/index.tsx.
+
+
+Reach out to us on Discord with any questions: https://discord.gg/4mXVhY74ew
