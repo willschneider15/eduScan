@@ -11,7 +11,7 @@ const Spawn: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pr
   return (
     <>
 
-      <div className='bg-zinc-50 px-10 py-4'>
+      <div className='bg-spawn-white px-10 py-4'>
             <div className="justify-between mx-auto flex min-h-screen max-w-7xl flex-col">
                   
               <Head>
@@ -23,12 +23,12 @@ const Spawn: NextPage < { upcoming: any[], previous : any[] }> = ({ upcoming, pr
              
               <div id="events" className="flex flex-col gap-5">
 
-              <h2 className="text-purple-700 font-bold text-2xl">Upcoming Events</h2>
+              <h2 className="text-spawn-violet font-bold text-2xl">Upcoming Events</h2>
                 
                 <Events posts={upcoming}/>
 
                 
-                <h2 className="text-purple-700 font-bold text-2xl pt-10">Previous Events</h2>
+                <h2 className="text-spawn-violet font-bold text-2xl pt-10">Previous Events</h2>
           
                 <Events posts={previous}/>
 

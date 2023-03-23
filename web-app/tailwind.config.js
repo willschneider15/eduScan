@@ -23,7 +23,9 @@ module.exports = {
       },
 
       colors: {
-        
+        'spawn-white' : '#F1F2F3',
+        'spawn-purple' : '#1E0521',
+        'spawn-violet' : '#C82586',
       }
 
 
